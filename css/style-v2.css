@@ -265,7 +265,7 @@ body { padding-top: 30px; }
    NOTÍCIAS — Cards como Aécio
    ======================================== */
 .noticias-section { padding: 60px 0; background: var(--white); }
-.noticias-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.noticias-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
 
 .noticia-card {
     display: flex; flex-direction: column;
@@ -1098,6 +1098,7 @@ body { padding-top: 30px; }
 @media (max-width: 1100px) {
     .header-stamp { display: none; }
     .header-nav-link { padding: 8px 10px; font-size: 12px; }
+    .noticias-grid { grid-template-columns: repeat(2, 1fr); }
     .sobre-layout { grid-template-columns: 280px 1fr; gap: 40px; }
     .bandeiras-row { grid-template-columns: repeat(3, 1fr); }
     .videos-grid { grid-template-columns: repeat(2, 1fr); }

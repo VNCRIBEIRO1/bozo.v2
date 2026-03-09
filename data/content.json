@@ -106,6 +106,15 @@
       "description": "Vereador encaminha requerimentos ao executivo solicitando manutenção e pavimentação das estradas rurais que beneficiam produtores e moradores da zona rural.",
       "link": "noticia-estradas-rurais.html",
       "date": "2026-01-15"
+    },
+    {
+      "id": "noticia-4",
+      "image": "images/causa-animal.jpg",
+      "imageAlt": "R$ 100 mil para causa animal",
+      "title": "Wellington Bozo destina R$ 100 mil para causa animal em Presidente Prudente",
+      "description": "Emenda parlamentar de R$ 100 mil direcionada para castração, vacinação e cuidados veterinários de animais em situação de abandono no município.",
+      "link": "noticia-emenda-animal.html",
+      "date": "2026-03-01"
     }
   ],
 
