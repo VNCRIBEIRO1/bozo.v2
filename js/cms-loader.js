@@ -8,6 +8,12 @@
 
     const STORAGE_KEY = 'cms_bozo_data';
 
+    /* ───────── XSS PROTECTION ───────── */
+    function esc(str) {
+        if (!str) return '';
+        return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
     function loadCMS() {
         const stored = localStorage.getItem(STORAGE_KEY);
         if (!stored) return; // Sem dados CMS — manter HTML estático
@@ -27,7 +33,7 @@
         return 'index';
     }
 
-    /* ───────── COMMON (Header, Footer) ───────── */
+    /* ───────── COMMON (Header, Footer, Draft) ───────── */
     function renderCommon(data) {
         const s = data.settings || {};
 
@@ -37,7 +43,9 @@
 
         // Stamp
         document.querySelectorAll('.stamp-years').forEach(el => el.textContent = s.stampYears || '');
-        document.querySelectorAll('.stamp-text').forEach(el => el.innerHTML = (s.stampText || '').replace(/\n/g, '<br>'));
+        document.querySelectorAll('.stamp-text').forEach(el => {
+            el.innerHTML = esc(s.stampText || '').replace(/\n/g, '<br>');
+        });
 
         // Draft bar
         const draftBar = document.querySelector('.draft-bar');
@@ -45,52 +53,50 @@
             if (s.draftMode === false) {
                 draftBar.style.display = 'none';
             } else if (s.draftText) {
-                draftBar.innerHTML = `<i class="fas fa-drafting-compass"></i> ${s.draftText}`;
+                draftBar.innerHTML = `<i class="fas fa-drafting-compass"></i> ${esc(s.draftText)}`;
             }
         }
 
-        // Contact info
+        // Contact info in footer
         const contact = s.contact || {};
         document.querySelectorAll('.contato-item').forEach(item => {
             const icon = item.querySelector('i');
             if (!icon) return;
-            const iconClass = icon.className;
-            if (iconClass.includes('fa-phone') && contact.phone) {
-                const pEl = item.querySelector('p');
-                if (pEl) pEl.textContent = contact.phone;
-            }
-            if (iconClass.includes('fa-envelope') && contact.email) {
-                const pEl = item.querySelector('p');
-                if (pEl) pEl.textContent = contact.email;
-            }
-            if (iconClass.includes('fa-clock') && contact.hours) {
-                const pEl = item.querySelector('p');
-                if (pEl) pEl.textContent = contact.hours;
-            }
+            const cls = icon.className;
+            const pEl = item.querySelector('p');
+            if (!pEl) return;
+            if (cls.includes('fa-phone') && contact.phone) pEl.textContent = contact.phone;
+            if (cls.includes('fa-envelope') && contact.email) pEl.textContent = contact.email;
+            if (cls.includes('fa-clock') && contact.hours) pEl.textContent = contact.hours;
+            if (cls.includes('fa-map-marker') && contact.address) pEl.textContent = contact.address;
         });
 
         // Social links
         const soc = s.social || {};
-        document.querySelectorAll('a[href*="instagram.com"]').forEach(el => {
-            if (soc.instagram) el.href = soc.instagram;
-        });
-        document.querySelectorAll('a[href*="facebook.com"]').forEach(el => {
-            if (soc.facebook) el.href = soc.facebook;
-        });
+        if (soc.instagram) {
+            document.querySelectorAll('a[href*="instagram.com"]').forEach(el => { el.href = soc.instagram; });
+        }
+        if (soc.facebook) {
+            document.querySelectorAll('a[href*="facebook.com"]').forEach(el => { el.href = soc.facebook; });
+        }
     }
 
     /* ───────── INDEX PAGE ───────── */
     function renderIndex(data) {
         renderHeroSlides(data);
         renderNoticias(data);
+        renderCityParallax(data);
+        renderGaleria(data);
         renderPronunciamentos(data);
         renderOpinioes(data);
-        renderSobre(data);
-        renderBandeiras(data);
-        renderGaleria(data);
-        renderVideos(data);
-        renderCidade(data);
+        renderInstagram(data);
         renderFacebook(data);
+        renderVideos(data);
+        renderSobre(data);
+        renderSobreStats(data);
+        renderBandeiras(data);
+        renderCidade(data);
+        renderCidadeFacts(data);
     }
 
     function renderHeroSlides(data) {
@@ -100,15 +106,17 @@
         if (!container) return;
 
         const activeSlides = slides.filter(s => s.active !== false);
+        if (!activeSlides.length) return;
+
         container.innerHTML = activeSlides.map((slide, i) => {
-            const posStyle = slide.imagePosition ? `background-position: ${slide.imagePosition}` : '';
-            return `<div class="hero-slide${i === 0 ? ' active' : ''}" style="background-image: url('${slide.image}');${posStyle}">
+            const posStyle = slide.imagePosition ? `background-position: ${esc(slide.imagePosition)}` : '';
+            return `<div class="hero-slide${i === 0 ? ' active' : ''}" style="background-image: url('${esc(slide.image)}');${posStyle}">
                 <div class="hero-gradient"></div>
                 <div class="container">
                     <div class="hero-slide-content">
-                        <h2>${slide.title}</h2>
-                        <p>${slide.description}</p>
-                        <a href="${slide.link || '#'}" class="hero-btn">${slide.linkText || 'Leia mais'} <i class="fas fa-arrow-right"></i></a>
+                        <h2>${esc(slide.title)}</h2>
+                        <p>${esc(slide.description)}</p>
+                        <a href="${esc(slide.link || '#')}" class="hero-btn">${esc(slide.linkText || 'Leia mais')} <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>`;
@@ -130,17 +138,36 @@
         if (!grid) return;
 
         grid.innerHTML = noticias.map(n => `
-            <a href="${n.link || '#'}" class="noticia-card">
+            <a href="${esc(n.link || '#')}" class="noticia-card">
                 <div class="noticia-card-img">
-                    <img src="${n.image}" alt="${n.imageAlt || n.title}" loading="lazy">
+                    <img src="${esc(n.image)}" alt="${esc(n.imageAlt || n.title)}" loading="lazy">
                 </div>
                 <div class="noticia-card-body">
-                    <h3>${n.title}</h3>
-                    <p>${n.description}</p>
+                    <h3>${esc(n.title)}</h3>
+                    <p>${esc(n.description)}</p>
                 </div>
                 <span class="noticia-card-link">Leia mais &raquo;</span>
             </a>
         `).join('');
+    }
+
+    function renderCityParallax(data) {
+        const cp = data.cityParallax;
+        if (!cp) return;
+
+        const tagEl = document.querySelector('.city-tag');
+        if (tagEl && cp.tag) tagEl.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${esc(cp.tag)}`;
+
+        const titleEl = document.querySelector('.city-parallax-content h2');
+        if (titleEl && cp.title) titleEl.textContent = cp.title;
+
+        const descEl = document.querySelector('.city-parallax-content p');
+        if (descEl && cp.description) descEl.textContent = cp.description;
+
+        if (cp.image) {
+            const bgEl = document.querySelector('.city-parallax-bg');
+            if (bgEl) bgEl.style.backgroundImage = `url('${cp.image}')`;
+        }
     }
 
     function renderPronunciamentos(data) {
@@ -150,14 +177,14 @@
         if (!grid) return;
 
         grid.innerHTML = items.map(p => `
-            <a href="${p.link || '#'}" class="pronunc-card">
+            <a href="${esc(p.link || '#')}" class="pronunc-card">
                 <div class="pronunc-card-img">
-                    <img src="${p.image}" alt="${p.imageAlt || p.title}" loading="lazy">
+                    <img src="${esc(p.image)}" alt="${esc(p.imageAlt || p.title)}" loading="lazy">
                 </div>
                 <div class="pronunc-card-body">
-                    <span class="pronunc-date">${p.date || ''}</span>
-                    <h3>${p.title}</h3>
-                    <p>${p.description}</p>
+                    <span class="pronunc-date">${esc(p.date || '')}</span>
+                    <h3>${esc(p.title)}</h3>
+                    <p>${esc(p.description)}</p>
                 </div>
                 <span class="pronunc-link">Leia mais &raquo;</span>
             </a>
@@ -170,52 +197,80 @@
         const carousel = document.querySelector('.opiniao-carousel');
         if (!carousel) return;
 
-        // Keep arrows and dots container, replace slides
-        const prevBtn = carousel.querySelector('.opiniao-prev');
-        const nextBtn = carousel.querySelector('.opiniao-next');
         const dotsEl = carousel.querySelector('.opiniao-dots');
 
-        // Remove old slides
+        // Remove old slides only
         carousel.querySelectorAll('.opiniao-slide').forEach(s => s.remove());
 
-        // Insert new slides before dots
+        // Clear old dots so main-v2.js regenerates them fresh
+        if (dotsEl) dotsEl.innerHTML = '';
+
+        // Insert new slides before dots container
         items.forEach((op, i) => {
             const slide = document.createElement('div');
             slide.className = 'opiniao-slide' + (i === 0 ? ' active' : '');
             slide.innerHTML = `<div class="opiniao-icon"><i class="fas fa-quote-left"></i></div>
-                <blockquote>"${op.quote}"</blockquote>
-                <cite>${op.author}</cite>`;
+                <blockquote>"${esc(op.quote)}"</blockquote>
+                <cite>${esc(op.author)}</cite>`;
             carousel.insertBefore(slide, dotsEl);
         });
+    }
+
+    function renderInstagram(data) {
+        const items = data.instagram;
+        if (!items?.length) return;
+        const grid = document.querySelector('.insta-grid');
+        if (!grid) return;
+
+        const igUrl = data.settings?.social?.instagram || '#';
+        grid.innerHTML = items.map(item => `
+            <a href="${esc(igUrl)}" target="_blank" class="insta-item">
+                <img src="${esc(item.image)}" alt="${esc(item.alt)}" loading="lazy">
+                <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+            </a>
+        `).join('');
     }
 
     function renderSobre(data) {
         const s = data.sobre;
         if (!s) return;
 
-        // Photo
         const photoImg = document.querySelector('.sobre-photo img');
         if (photoImg && s.photo) photoImg.src = s.photo;
 
-        // Tag
         const tag = document.querySelector('.sobre-tag');
         if (tag && s.tag) tag.textContent = s.tag;
 
-        // Name
         const name = document.querySelector('.sobre-body h2');
         if (name && s.name) name.textContent = s.name;
 
-        // Role
         const role = document.querySelector('.sobre-role');
-        if (role && s.role) role.innerHTML = s.role.replace(/\n/g, '<br>');
+        if (role && s.role) role.innerHTML = esc(s.role).replace(/\n/g, '<br>');
 
-        // Bio paragraphs
+        // Bio paragraphs (skip .sobre-role which is also a <p>)
         const bioPs = document.querySelectorAll('.sobre-body > p:not(.sobre-role)');
         if (s.bio && bioPs.length) {
             s.bio.forEach((text, i) => {
                 if (bioPs[i]) bioPs[i].textContent = text;
             });
         }
+    }
+
+    function renderSobreStats(data) {
+        const stats = data.sobre?.stats;
+        if (!stats?.length) return;
+        const row = document.querySelector('.sobre-stats-row');
+        if (!row) return;
+
+        row.innerHTML = stats.map(st => {
+            const countAttr = st.isCounter ? ` data-count="${esc(st.value)}"` : '';
+            const displayValue = st.isCounter ? '0' : esc(st.value);
+            return `<div class="sobre-stat-item">
+                <i class="${esc(st.icon)}"></i>
+                <strong${countAttr}>${displayValue}</strong>
+                <span>${esc(st.label)}</span>
+            </div>`;
+        }).join('');
     }
 
     function renderBandeiras(data) {
@@ -226,10 +281,10 @@
 
         row.innerHTML = items.map(b => `
             <div class="bandeira-card">
-                <div class="bandeira-img"><img src="${b.image}" alt="${b.title}" loading="lazy"></div>
-                <div class="bandeira-icon"><i class="${b.icon}"></i></div>
-                <h3>${b.title}</h3>
-                <p>${b.description}</p>
+                <div class="bandeira-img"><img src="${esc(b.image)}" alt="${esc(b.title)}" loading="lazy"></div>
+                <div class="bandeira-icon"><i class="${esc(b.icon)}"></i></div>
+                <h3>${esc(b.title)}</h3>
+                <p>${esc(b.description)}</p>
             </div>
         `).join('');
     }
@@ -242,8 +297,8 @@
 
         scroll.innerHTML = items.map(g => `
             <div class="encontro-item">
-                <img src="${g.image}" alt="${g.caption}" loading="lazy">
-                <span class="encontro-caption">${g.caption}</span>
+                <img src="${esc(g.image)}" alt="${esc(g.caption)}" loading="lazy">
+                <span class="encontro-caption">${esc(g.caption)}</span>
             </div>
         `).join('');
     }
@@ -254,13 +309,14 @@
         const grid = document.querySelector('.videos-grid');
         if (!grid) return;
 
-        grid.innerHTML = items.map(v => `
-            <div class="video-thumb"${v.url ? ` onclick="window.open('${v.url}','_blank')" style="cursor:pointer"` : ''}>
-                <img src="${v.thumbnail}" alt="${v.caption}" loading="lazy">
+        grid.innerHTML = items.map(v => {
+            const clickAttr = v.url ? ` onclick="window.open('${esc(v.url)}','_blank')" style="cursor:pointer"` : '';
+            return `<div class="video-thumb"${clickAttr}>
+                <img src="${esc(v.thumbnail)}" alt="${esc(v.caption)}" loading="lazy">
                 <div class="video-play"><i class="fas fa-play"></i></div>
-                <span class="video-caption">${v.caption}</span>
-            </div>
-        `).join('');
+                <span class="video-caption">${esc(v.caption)}</span>
+            </div>`;
+        }).join('');
     }
 
     function renderCidade(data) {
@@ -274,7 +330,28 @@
         if (descEl && c.description) descEl.textContent = c.description;
 
         const captionEl = document.querySelector('.nossa-cidade-card-caption');
-        if (captionEl && c.imageCaption) captionEl.innerHTML = `<i class="fas fa-camera"></i> ${c.imageCaption}`;
+        if (captionEl && c.imageCaption) captionEl.innerHTML = `<i class="fas fa-camera"></i> ${esc(c.imageCaption)}`;
+
+        // Update cidade image
+        const imgEl = document.querySelector('.nossa-cidade-card img');
+        if (imgEl && c.image) imgEl.src = c.image;
+    }
+
+    function renderCidadeFacts(data) {
+        const facts = data.cidade?.facts;
+        if (!facts?.length) return;
+        const container = document.querySelector('.cidade-facts');
+        if (!container) return;
+
+        container.innerHTML = facts.map(f => {
+            const countAttr = f.isCounter ? ` data-count="${esc(f.value)}"` : '';
+            const displayValue = f.isCounter ? '0' : esc(f.value);
+            return `<div class="cidade-fact">
+                <i class="${esc(f.icon)}"></i>
+                <strong${countAttr}>${displayValue}</strong>
+                <span>${esc(f.label)}</span>
+            </div>`;
+        }).join('');
     }
 
     function renderFacebook(data) {
@@ -292,11 +369,12 @@
         if (!ca) return;
 
         renderAnimalHero(ca);
+        renderAnimalStats(ca);
         renderAnimalNews(ca);
         renderAnimalLeis(ca);
         renderAnimalProjetos(ca);
         renderAnimalProtetores(ca);
-        renderAnimalDenuncia(ca, data);
+        renderAnimalDenuncia(ca);
     }
 
     function renderAnimalHero(ca) {
@@ -304,7 +382,7 @@
         if (!hero) return;
 
         const titleEl = document.querySelector('.hub-hero-content h1');
-        if (titleEl && hero.title) titleEl.innerHTML = hero.title.replace(/\n/g, '<br>') + ' <span class="paw-emoji">🐾</span>';
+        if (titleEl && hero.title) titleEl.innerHTML = esc(hero.title).replace(/\n/g, '<br>') + ' <span class="paw-emoji">🐾</span>';
 
         const descEl = document.querySelector('.hub-hero-content > p');
         if (descEl && hero.description) descEl.textContent = hero.description;
@@ -313,6 +391,22 @@
             const bg = document.querySelector('.hub-hero-bg');
             if (bg) bg.style.backgroundImage = `url('${hero.image}')`;
         }
+    }
+
+    function renderAnimalStats(ca) {
+        const stats = ca.hero?.stats;
+        if (!stats?.length) return;
+        const container = document.querySelector('.hub-hero-stats');
+        if (!container) return;
+
+        container.innerHTML = stats.map(st => {
+            const countAttr = st.isCounter ? ` data-count="${esc(st.value)}"` : '';
+            const displayValue = st.isCounter ? '0' : esc(st.value);
+            return `<div class="hub-stat">
+                <strong${countAttr}>${displayValue}</strong>
+                <span>${esc(st.label)}</span>
+            </div>`;
+        }).join('');
     }
 
     function renderAnimalNews(ca) {
@@ -329,30 +423,30 @@
             if (n.type === 'featured') {
                 return `<article class="hub-news-featured">
                     <div class="hub-news-img">
-                        <img src="${n.image}" alt="${n.imageAlt || n.title}" loading="lazy">
-                        <span class="hub-news-badge">${n.badge || 'Destaque'}</span>
+                        <img src="${esc(n.image)}" alt="${esc(n.imageAlt || n.title)}" loading="lazy">
+                        <span class="hub-news-badge">${esc(n.badge || 'Destaque')}</span>
                     </div>
                     <div class="hub-news-body">
                         <div class="hub-news-meta">
-                            <span><i class="fas fa-calendar-alt"></i> ${n.date || ''}</span>
-                            ${n.category ? `<span class="hub-news-cat">${n.category}</span>` : ''}
+                            <span><i class="fas fa-calendar-alt"></i> ${esc(n.date || '')}</span>
+                            ${n.category ? `<span class="hub-news-cat">${esc(n.category)}</span>` : ''}
                         </div>
-                        <h3>${n.title}</h3>
-                        <p>${n.description}</p>
-                        <a href="${n.link || '#'}"${isExternal} class="hub-news-link">${n.linkText || 'Ler mais'} <i class="fas ${extIcon}"></i></a>
+                        <h3>${esc(n.title)}</h3>
+                        <p>${esc(n.description)}</p>
+                        <a href="${esc(n.link || '#')}"${isExternal} class="hub-news-link">${esc(n.linkText || 'Ler mais')} <i class="fas ${extIcon}"></i></a>
                     </div>
                 </article>`;
             }
             return `<article class="hub-news-card">
                 <div class="hub-news-img">
-                    <img src="${n.image}" alt="${n.imageAlt || n.title}" loading="lazy">
-                    <span class="hub-news-badge ${badgeClass}">${n.badge || ''}</span>
+                    <img src="${esc(n.image)}" alt="${esc(n.imageAlt || n.title)}" loading="lazy">
+                    <span class="hub-news-badge ${badgeClass}">${esc(n.badge || '')}</span>
                 </div>
                 <div class="hub-news-body">
-                    <div class="hub-news-meta"><span><i class="fas fa-calendar-alt"></i> ${n.date || ''}</span></div>
-                    <h3>${n.title}</h3>
-                    <p>${n.description}</p>
-                    <a href="${n.link || '#'}"${isExternal} class="hub-news-link">${n.linkText || 'Ler mais'} <i class="fas ${extIcon}"></i></a>
+                    <div class="hub-news-meta"><span><i class="fas fa-calendar-alt"></i> ${esc(n.date || '')}</span></div>
+                    <h3>${esc(n.title)}</h3>
+                    <p>${esc(n.description)}</p>
+                    <a href="${esc(n.link || '#')}"${isExternal} class="hub-news-link">${esc(n.linkText || 'Ler mais')} <i class="fas ${extIcon}"></i></a>
                 </div>
             </article>`;
         }).join('');
@@ -368,19 +462,19 @@
             const badgeClass = lei.badgeType === 'approved' ? 'hub-law-approved' : 'hub-law-emenda';
             const badgeIcon = lei.badgeType === 'approved' ? 'fa-check-circle' : 'fa-dollar-sign';
             const featuredClass = lei.featured ? ' hub-law-card-featured' : '';
-            const details = (lei.details || []).map(d => `<li><i class="fas fa-check"></i> ${d}</li>`).join('');
+            const details = (lei.details || []).map(d => `<li><i class="fas fa-check"></i> ${esc(d)}</li>`).join('');
             const isExternal = lei.link?.startsWith('http');
 
             return `<div class="hub-law-card${featuredClass}">
                 <div class="hub-law-top">
-                    <span class="hub-law-badge ${badgeClass}"><i class="fas ${badgeIcon}"></i> ${lei.badge}</span>
-                    <span class="hub-law-year">${lei.year}</span>
+                    <span class="hub-law-badge ${badgeClass}"><i class="fas ${badgeIcon}"></i> ${esc(lei.badge)}</span>
+                    <span class="hub-law-year">${esc(lei.year)}</span>
                 </div>
-                <div class="hub-law-icon"><i class="${lei.icon}"></i></div>
-                <h3>${lei.title}</h3>
-                <p>${lei.description}</p>
+                <div class="hub-law-icon"><i class="${esc(lei.icon)}"></i></div>
+                <h3>${esc(lei.title)}</h3>
+                <p>${esc(lei.description)}</p>
                 <ul class="hub-law-details">${details}</ul>
-                <a href="${lei.link || '#'}"${isExternal ? ' target="_blank"' : ''} class="hub-law-link">Saiba mais <i class="fas ${isExternal ? 'fa-external-link-alt' : 'fa-arrow-right'}"></i></a>
+                <a href="${esc(lei.link || '#')}"${isExternal ? ' target="_blank"' : ''} class="hub-law-link">Saiba mais <i class="fas ${isExternal ? 'fa-external-link-alt' : 'fa-arrow-right'}"></i></a>
             </div>`;
         }).join('');
     }
@@ -392,17 +486,17 @@
         if (!timeline) return;
 
         timeline.innerHTML = items.map(p => {
-            const statusClass = p.status === 'active' ? 'hub-status-active' : 'hub-status-planned';
-            const statusIcon = p.status === 'active' ? 'fa-spinner fa-pulse' : 'fa-clock';
+            const statusClass = p.status === 'active' ? 'hub-status-active' : p.status === 'completed' ? 'hub-status-completed' : 'hub-status-planned';
+            const statusIcon = p.status === 'active' ? 'fa-spinner fa-pulse' : p.status === 'completed' ? 'fa-check-circle' : 'fa-clock';
             return `<div class="hub-timeline-item">
-                <div class="hub-timeline-marker"><i class="${p.icon}"></i></div>
+                <div class="hub-timeline-marker"><i class="${esc(p.icon)}"></i></div>
                 <div class="hub-timeline-content">
-                    <span class="hub-timeline-status ${statusClass}"><i class="fas ${statusIcon}"></i> ${p.statusText}</span>
-                    <h3>${p.title}</h3>
-                    <p>${p.description}</p>
+                    <span class="hub-timeline-status ${statusClass}"><i class="fas ${statusIcon}"></i> ${esc(p.statusText)}</span>
+                    <h3>${esc(p.title)}</h3>
+                    <p>${esc(p.description)}</p>
                     <div class="hub-timeline-progress">
                         <div class="hub-progress-bar" data-progress="${p.progress}" style="--bar-width:${p.progress}%"></div>
-                        <span>${p.progressText}</span>
+                        <span>${esc(p.progressText)}</span>
                     </div>
                 </div>
             </div>`;
@@ -417,15 +511,15 @@
 
         grid.innerHTML = items.map(p => `
             <div class="hub-protector-card">
-                <div class="hub-protector-icon"><i class="${p.icon}"></i></div>
-                <h3>${p.name}</h3>
-                <p>${p.description}</p>
-                <span class="hub-protector-tag">${p.tag}</span>
+                <div class="hub-protector-icon"><i class="${esc(p.icon)}"></i></div>
+                <h3>${esc(p.name)}</h3>
+                <p>${esc(p.description)}</p>
+                <span class="hub-protector-tag">${esc(p.tag)}</span>
             </div>
         `).join('');
     }
 
-    function renderAnimalDenuncia(ca, data) {
+    function renderAnimalDenuncia(ca) {
         const d = ca.denuncia;
         if (!d) return;
 
@@ -465,7 +559,7 @@
                 const span = el.querySelector('span');
                 if (strong) strong.textContent = ch.title;
                 if (span) span.textContent = `${ch.number} — ${ch.desc}`;
-                el.href = ch.link;
+                if (el.href !== undefined) el.href = ch.link;
             });
         }
     }

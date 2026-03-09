@@ -80,12 +80,21 @@ const CMS = {
         document.getElementById('modalOverlay')?.addEventListener('click', e => {
             if (e.target === e.currentTarget) this.closeModal();
         });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') this.closeModal();
+            if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+                e.preventDefault();
+                if (sessionStorage.getItem(this.AUTH_KEY) === 'true') this.saveData();
+            }
+        });
     },
 
-    showAdmin() {
+    async showAdmin() {
         document.getElementById('loginScreen').style.display = 'none';
         document.getElementById('adminWrapper').style.display = 'flex';
-        this.loadData();
+        await this.loadData();
         this.navigateTo('dashboard');
     },
 
@@ -291,7 +300,7 @@ const CMS = {
             </div>`;
         } else {
             items.forEach((item, idx) => {
-                const title = item.title || item.name || item.caption || item.quote?.substring(0, 60) + '...' || `Item ${idx + 1}`;
+                const title = item.title || item.name || item.caption || (item.quote ? item.quote.substring(0, 60) + '...' : '') || `Item ${idx + 1}`;
                 const meta = item.date || item.author || item.tag || item.link || '';
                 const img = item[imageField] || item.image;
                 const thumbHtml = config.hasImage && img
@@ -763,6 +772,20 @@ const CMS = {
 
         document.getElementById('modalOverlay').classList.add('open');
 
+        // Bind image preview updates in modal
+        document.querySelectorAll('.modal-field').forEach(field => {
+            if (field.dataset.key === 'image' || field.dataset.key === 'thumbnail') {
+                field.addEventListener('input', () => {
+                    const previewDiv = field.closest('.form-group')?.nextElementSibling?.querySelector('.form-image-preview');
+                    if (previewDiv) {
+                        previewDiv.innerHTML = field.value
+                            ? `<img src="../${field.value}" onerror="this.parentElement.innerHTML='Imagem não encontrada'">`
+                            : 'Pré-visualização';
+                    }
+                });
+            }
+        });
+
         // Bind modal events
         document.getElementById('modalCancel').addEventListener('click', () => this.closeModal());
         document.getElementById('modalSave').addEventListener('click', () => {
@@ -780,6 +803,8 @@ const CMS = {
                 newItem[key] = field.checked;
             } else if (field.dataset.type === 'list') {
                 newItem[key] = field.value.split('\n').filter(l => l.trim());
+            } else if (field.type === 'number') {
+                newItem[key] = parseInt(field.value, 10) || 0;
             } else {
                 newItem[key] = field.value;
             }
