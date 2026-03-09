@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ---------- SCROLL FADE-IN ---------- */
     const fadeEls = document.querySelectorAll(
-        '.noticia-card, .pronunc-card, .bandeira-card, .video-thumb, .sobre-layout, .animal-cta-inner, .contato-layout'
+        '.noticia-card, .pronunc-card, .bandeira-card, .video-thumb, .sobre-layout, .animal-cta-inner, .contato-layout, .city-parallax-content, .nossa-cidade-text, .nossa-cidade-card, .cidade-fact'
     );
     fadeEls.forEach(el => el.classList.add('fade-in'));
 
@@ -151,6 +151,25 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
         fadeEls.forEach(el => fadeObs.observe(el));
+    }
+
+    /* ---------- PARALLAX SCROLL ---------- */
+    const parallaxBgs = document.querySelectorAll('.city-parallax-bg, .nossa-cidade-bg');
+    if (parallaxBgs.length) {
+        const handleParallax = () => {
+            parallaxBgs.forEach(bg => {
+                const section = bg.parentElement;
+                const rect = section.getBoundingClientRect();
+                const vh = window.innerHeight;
+                if (rect.top < vh && rect.bottom > 0) {
+                    const progress = (vh - rect.top) / (vh + rect.height);
+                    const offset = (progress - 0.5) * 60;
+                    bg.style.transform = `translateY(${offset}px) scale(1.05)`;
+                }
+            });
+        };
+        window.addEventListener('scroll', handleParallax, { passive: true });
+        handleParallax();
     }
 
     /* ---------- ACTIVE NAV ON SCROLL ---------- */
