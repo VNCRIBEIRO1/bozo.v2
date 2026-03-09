@@ -332,9 +332,13 @@
         const captionEl = document.querySelector('.nossa-cidade-card-caption');
         if (captionEl && c.imageCaption) captionEl.innerHTML = `<i class="fas fa-camera"></i> ${esc(c.imageCaption)}`;
 
-        // Update cidade image
+        // Update cidade card image
         const imgEl = document.querySelector('.nossa-cidade-card img');
         if (imgEl && c.image) imgEl.src = c.image;
+
+        // Update cidade background parallax image
+        const bgEl = document.querySelector('.nossa-cidade-bg');
+        if (bgEl && c.image) bgEl.style.backgroundImage = `url('${c.image}')`;
     }
 
     function renderCidadeFacts(data) {

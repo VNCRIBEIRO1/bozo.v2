@@ -177,7 +177,9 @@ const CMS = {
             dashboard: 'Dashboard', hero: 'Hero / Slides', noticias: 'Notícias',
             pronunciamentos: 'Pronunciamentos', opinioes: 'Opiniões', videos: 'Vídeos',
             sobre: 'Sobre / Biografia', bandeiras: 'Bandeiras de Atuação', galeria: 'Galeria',
-            cidade: 'Nossa Cidade', 'animal-noticias': 'Notícias — Causa Animal',
+            cidade: 'Nossa Cidade', 'city-parallax': 'Parallax Cidade',
+            'redes': 'Redes Sociais / Instagram', 'animal-hero': 'Hero — Causa Animal',
+            'animal-noticias': 'Notícias — Causa Animal',
             'animal-leis': 'Leis de Proteção', 'animal-projetos': 'Projetos em Andamento',
             'animal-protetores': 'Protetores & ONGs', 'animal-denuncia': 'Disque Denúncia',
             contato: 'Contato', midia: 'Mídia / Imagens', configuracoes: 'Configurações'
@@ -201,6 +203,9 @@ const CMS = {
             bandeiras: () => this.renderListSection('bandeiras', { title: 'Bandeira', fields: ['title','description','image','icon'], hasImage: true }),
             galeria: () => this.renderListSection('galeria', { title: 'Foto', fields: ['caption','image'], hasImage: true }),
             cidade: () => this.renderCidade(),
+            'city-parallax': () => this.renderCityParallax(),
+            'redes': () => this.renderRedes(),
+            'animal-hero': () => this.renderAnimalHeroSection(),
             'animal-noticias': () => this.renderAnimalNoticias(),
             'animal-leis': () => this.renderAnimalLeis(),
             'animal-projetos': () => this.renderAnimalProjetos(),
@@ -398,6 +403,71 @@ const CMS = {
                 </div>
             </div>`).join('')}
             <button class="btn btn-accent" id="btnSaveCidade" style="margin-top:16px"><i class="fas fa-save"></i> Salvar Cidade</button>
+        </div>`;
+    },
+
+    /* ───────── CITY PARALLAX ───────── */
+    renderCityParallax() {
+        const cp = this.data.cityParallax || {};
+        return `<div class="info-panel">
+            <div class="info-panel-title"><i class="fas fa-mountain"></i> Parallax Divisor da Cidade</div>
+            <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:16px">
+                Seção de destaque com fundo parallax que aparece entre as Notícias e a Galeria na página principal.
+            </p>
+            <div class="form-grid">
+                <div class="form-group"><label class="form-label">Tag (ex: Presidente Prudente — SP)</label><input class="form-input" id="cpTag" value="${this.escHtml(cp.tag || '')}"></div>
+                <div class="form-group"><label class="form-label">Imagem de Fundo</label><input class="form-input" id="cpImage" value="${this.escHtml(cp.image || '')}"></div>
+                <div class="form-group full"><label class="form-label">Título</label><input class="form-input" id="cpTitle" value="${this.escHtml(cp.title || '')}"></div>
+                <div class="form-group full"><label class="form-label">Descrição</label><textarea class="form-textarea" id="cpDesc" rows="3">${this.escHtml(cp.description || '')}</textarea></div>
+            </div>
+            <button class="btn btn-accent" id="btnSaveCityParallax" style="margin-top:16px"><i class="fas fa-save"></i> Salvar Parallax</button>
+        </div>`;
+    },
+
+    /* ───────── REDES SOCIAIS (Instagram + Facebook) ───────── */
+    renderRedes() {
+        const fb = this.data.facebookPost || {};
+        let html = this.renderListSection('instagram', { title: 'Post Instagram', fields: ['image','alt'], hasImage: true });
+
+        html += `<div class="info-panel" style="margin-top:24px">
+            <div class="info-panel-title"><i class="fab fa-facebook-f"></i> Post Facebook (Preview)</div>
+            <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:16px">
+                Post estático exibido na seção de redes sociais da página principal.
+            </p>
+            <div class="form-grid">
+                <div class="form-group full"><label class="form-label">Texto do Post</label><textarea class="form-textarea" id="fbText" rows="4">${this.escHtml(fb.text || '')}</textarea></div>
+                <div class="form-group"><label class="form-label">Imagem do Post</label><input class="form-input" id="fbImage" value="${this.escHtml(fb.image || '')}"></div>
+                <div class="form-group"><div class="form-image-preview" id="fbImagePreview">${fb.image ? `<img src="../${fb.image}">` : 'Sem imagem'}</div></div>
+            </div>
+            <button class="btn btn-accent" id="btnSaveRedes" style="margin-top:16px"><i class="fas fa-save"></i> Salvar Facebook</button>
+        </div>`;
+        return html;
+    },
+
+    /* ───────── ANIMAL HERO ───────── */
+    renderAnimalHeroSection() {
+        const h = this.data.causaAnimal?.hero || {};
+        return `<div class="info-panel">
+            <div class="info-panel-title"><i class="fas fa-paw"></i> Hero — Causa Animal</div>
+            <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:16px">
+                Seção de destaque no topo da página Causa Animal (parallax, partículas, estatísticas).
+            </p>
+            <div class="form-grid">
+                <div class="form-group"><label class="form-label">Tag</label><input class="form-input" id="ahTag" value="${this.escHtml(h.tag || '')}"></div>
+                <div class="form-group"><label class="form-label">Imagem de Fundo</label><input class="form-input" id="ahImage" value="${this.escHtml(h.image || '')}"></div>
+                <div class="form-group full"><label class="form-label">Título</label><input class="form-input" id="ahTitle" value="${this.escHtml(h.title || '')}"></div>
+                <div class="form-group full"><label class="form-label">Descrição</label><textarea class="form-textarea" id="ahDesc" rows="3">${this.escHtml(h.description || '')}</textarea></div>
+            </div>
+            <h4 style="margin:20px 0 12px;font-size:0.9rem">Estatísticas do Hero</h4>
+            ${(h.stats || []).map((st, i) => `
+            <div class="form-grid" style="margin-bottom:12px;padding:12px;background:var(--bg-3);border-radius:var(--radius-sm)">
+                <div class="form-group"><label class="form-label">Valor</label><input class="form-input" id="ahStat${i}Value" value="${this.escHtml(st.value || '')}"></div>
+                <div class="form-group"><label class="form-label">Label</label><input class="form-input" id="ahStat${i}Label" value="${this.escHtml(st.label || '')}"></div>
+                <div class="form-group"><label class="form-label">Animar?</label>
+                    <label class="form-toggle"><input type="checkbox" id="ahStat${i}Counter" ${st.isCounter ? 'checked' : ''}><span class="toggle-track"></span><span class="form-toggle-label">Contador</span></label>
+                </div>
+            </div>`).join('')}
+            <button class="btn btn-accent" id="btnSaveAnimalHero" style="margin-top:16px"><i class="fas fa-save"></i> Salvar Hero Animal</button>
         </div>`;
     },
 
@@ -619,6 +689,9 @@ const CMS = {
         // Section-specific save buttons
         this.bindSaveSobre();
         this.bindSaveCidade();
+        this.bindSaveCityParallax();
+        this.bindSaveRedes();
+        this.bindSaveAnimalHero();
         this.bindSaveContato();
         this.bindSaveConfig();
         this.bindSaveDenuncia();
@@ -657,6 +730,54 @@ const CMS = {
                 f.value = document.getElementById(`cidadeFact${i}Value`)?.value || f.value;
                 f.label = document.getElementById(`cidadeFact${i}Label`)?.value || f.label;
                 f.isCounter = document.getElementById(`cidadeFact${i}Counter`)?.checked || false;
+            });
+            this.saveData();
+        });
+    },
+
+    bindSaveCityParallax() {
+        document.getElementById('btnSaveCityParallax')?.addEventListener('click', () => {
+            if (!this.data.cityParallax) this.data.cityParallax = {};
+            const cp = this.data.cityParallax;
+            cp.tag = document.getElementById('cpTag').value;
+            cp.title = document.getElementById('cpTitle').value;
+            cp.description = document.getElementById('cpDesc').value;
+            cp.image = document.getElementById('cpImage').value;
+            this.saveData();
+        });
+    },
+
+    bindSaveRedes() {
+        document.getElementById('btnSaveRedes')?.addEventListener('click', () => {
+            if (!this.data.facebookPost) this.data.facebookPost = {};
+            const fb = this.data.facebookPost;
+            fb.text = document.getElementById('fbText').value;
+            fb.image = document.getElementById('fbImage').value;
+            this.saveData();
+        });
+        document.getElementById('fbImage')?.addEventListener('input', function () {
+            const preview = document.getElementById('fbImagePreview');
+            if (preview) {
+                preview.innerHTML = this.value
+                    ? `<img src="../${this.value}" onerror="this.parentElement.innerHTML='Imagem não encontrada'">`
+                    : 'Sem imagem';
+            }
+        });
+    },
+
+    bindSaveAnimalHero() {
+        document.getElementById('btnSaveAnimalHero')?.addEventListener('click', () => {
+            if (!this.data.causaAnimal) this.data.causaAnimal = {};
+            if (!this.data.causaAnimal.hero) this.data.causaAnimal.hero = {};
+            const h = this.data.causaAnimal.hero;
+            h.tag = document.getElementById('ahTag').value;
+            h.title = document.getElementById('ahTitle').value;
+            h.description = document.getElementById('ahDesc').value;
+            h.image = document.getElementById('ahImage').value;
+            (h.stats || []).forEach((st, i) => {
+                st.value = document.getElementById(`ahStat${i}Value`)?.value || st.value;
+                st.label = document.getElementById(`ahStat${i}Label`)?.value || st.label;
+                st.isCounter = document.getElementById(`ahStat${i}Counter`)?.checked || false;
             });
             this.saveData();
         });
@@ -878,6 +999,10 @@ const CMS = {
             galeria: [
                 { key: 'image', label: 'Imagem', type: 'text', placeholder: 'images/foto.jpg' },
                 { key: 'caption', label: 'Legenda', type: 'text', fullWidth: true }
+            ],
+            instagram: [
+                { key: 'image', label: 'Imagem', type: 'text', placeholder: 'images/insta-1.jpg' },
+                { key: 'alt', label: 'Alt Text', type: 'text' }
             ],
             'causaAnimal.noticias': [
                 { key: 'title', label: 'Título', type: 'text', fullWidth: true },
