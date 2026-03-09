@@ -1,0 +1,12 @@
+# Arquivos muito grandes para GitHub (>50MB)
+images/*_upscayl_*.png
+images/about-bozo.zip
+images/Generated Image*
+
+# Node
+node_modules/
+.vercel/
+
+# OS
+Thumbs.db
+.DS_Store

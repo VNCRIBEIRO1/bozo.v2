@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wellington Bozo - Vereador de Presidente Prudente. Vice-Presidente da Câmara Municipal. Template V2 — Esboço para aprovação.">
+    <title>Wellington Bozo | Vereador — Template V2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style-v2.css">
+</head>
+<body>
+
+    <!-- ===== DRAFT NOTICE ===== -->
+    <div class="draft-bar">
+        <i class="fas fa-drafting-compass"></i> ESBOÇO V2 — Versão para aprovação. Não publicar.
+    </div>
+
+    <!-- ===== HEADER (Padrão Aécio Neves) ===== -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-main">
+            <div class="container">
+                <div class="header-inner">
+                    <!-- Logo -->
+                    <a href="#" class="header-logo">
+                        <div class="logo-badge">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <div class="logo-info">
+                            <span class="logo-name">Wellington Bozo</span>
+                            <span class="logo-role">Vereador de Presidente Prudente</span>
+                        </div>
+                    </a>
+
+                    <!-- Selo — como o "40 anos de vida pública" do Aécio -->
+                    <a href="#sobre" class="header-stamp">
+                        <span class="stamp-years">19+</span>
+                        <span class="stamp-text">anos de<br>serviço público</span>
+                    </a>
+
+                    <!-- Nav -->
+                    <nav class="header-nav" id="headerNav">
+                        <a href="#inicio" class="header-nav-link active">Home</a>
+                        <a href="#sobre" class="header-nav-link">Sobre</a>
+                        <a href="#trajetoria" class="header-nav-link">Trajetória</a>
+                        <a href="#noticias" class="header-nav-link">Notícias</a>
+                        <a href="#pronunciamentos" class="header-nav-link">Pronunciamentos</a>
+                        <a href="../causa-animal.html" class="header-nav-link">Causa Animal</a>
+                        <a href="#contato" class="header-nav-link">Fale Conosco</a>
+                    </nav>
+
+                    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO CAROUSEL (Full-width como Aécio) ===== -->
+    <section class="hero-carousel" id="inicio">
+        <div class="hero-slides">
+            <!-- Slide 1 -->
+            <div class="hero-slide active" style="background-image: url('images/hero-denuncia-premiada.png');">
+                <div class="hero-gradient"></div>
+                <div class="container">
+                    <div class="hero-slide-content">
+                        <h2>Câmara aprova Denúncia Premiada proposta por Bozo para proteção animal</h2>
+                        <p>Projeto de Lei nº 399/2026 garante recompensa financeira para moradores que denunciarem maus-tratos contra animais em Presidente Prudente, com sigilo total ao denunciante.</p>
+                        <a href="../causa-animal.html" class="hero-btn">Leia mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="hero-slide" style="background-image: url('images/hero-slide-2.jpg');">
+                <div class="hero-gradient"></div>
+                <div class="container">
+                    <div class="hero-slide-content">
+                        <h2>Wellington Bozo: "A causa animal não é sobre política, é sobre humanidade"</h2>
+                        <p>Vice-Presidente da Câmara Municipal e autor da Lei nº 11.644/2025 de Proteção Animal, Wellington Bozo reafirma seu compromisso com Presidente Prudente.</p>
+                        <a href="#sobre" class="hero-btn">Leia mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="hero-slide" style="background-image: url('images/Vista_da_Catedral_-_Pra%C3%A7a_9_de_Julho_-_Presidente_Prudente_-_SP.jpg'); background-position: center 35%;">
+                <div class="hero-gradient"></div>
+                <div class="container">
+                    <div class="hero-slide-content">
+                        <h2>Bozo cobra melhorias em estradas rurais e reforça compromisso com infraestrutura</h2>
+                        <p>Vereador encaminha requerimentos solicitando manutenção e pavimentação das estradas rurais da região do km 18, beneficiando produtores e moradores da zona rural.</p>
+                        <a href="#noticias" class="hero-btn">Leia mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="hero-slide" style="background-image: url('images/bozo-protetoras.jpg');">
+                <div class="hero-gradient"></div>
+                <div class="container">
+                    <div class="hero-slide-content">
+                        <h2>Wellington Bozo reeleito Vice-Presidente da Câmara para a 19ª Legislatura</h2>
+                        <p>Com 1.833 votos pelo Republicanos, Bozo assume mais um mandato com foco em causa animal, saúde, infraestrutura rural, inclusão social e juventude.</p>
+                        <a href="#trajetoria" class="hero-btn">Leia mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 5 -->
+            <div class="hero-slide" style="background-image: url('images/hero-slide-3.jpg');">
+                <div class="hero-gradient"></div>
+                <div class="container">
+                    <div class="hero-slide-content">
+                        <h2>Lei nº 11.644/2025 cria Programa Educacional de Proteção Animal</h2>
+                        <p>Programa garante campanhas de castração, adoção responsável e educação sobre proteção animal nas escolas do município de Presidente Prudente.</p>
+                        <a href="../lei-11644-2025.html" class="hero-btn">Leia mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Controls -->
+        <button class="hero-arrow hero-arrow-prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+        <button class="hero-arrow hero-arrow-next" aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
+        <div class="hero-indicators">
+            <button class="hero-indicator active" data-slide="0"></button>
+            <button class="hero-indicator" data-slide="1"></button>
+            <button class="hero-indicator" data-slide="2"></button>
+            <button class="hero-indicator" data-slide="3"></button>
+            <button class="hero-indicator" data-slide="4"></button>
+        </div>
+    </section>
+
+    <!-- ===== NOTÍCIAS (Cards 3 colunas como Aécio) ===== -->
+    <section class="noticias-section" id="noticias">
+        <div class="container">
+            <div class="section-top">
+                <h2 class="section-heading">Notícias</h2>
+                <a href="#" class="section-more">Leia mais <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="noticias-grid">
+                <!-- Card 1 -->
+                <a href="#" class="noticia-card">
+                    <div class="noticia-card-img">
+                        <img src="images/causa-animal.jpg" alt="Denúncia Premiada aprovada na Câmara" loading="lazy">
+                    </div>
+                    <div class="noticia-card-body">
+                        <h3>Câmara aprova Denúncia Premiada: recompensa a quem denunciar maus-tratos contra animais</h3>
+                        <p>Projeto de Lei nº 399/2026 de autoria do vereador Wellington Bozo garante recompensa financeira para moradores que denunciarem maus-tratos contra animais em Presidente Prudente.</p>
+                    </div>
+                    <span class="noticia-card-link">Leia mais &raquo;</span>
+                </a>
+                <!-- Card 2 -->
+                <a href="../lei-11644-2025.html" class="noticia-card">
+                    <div class="noticia-card-img">
+                        <img src="images/bozo-protetoras.jpg" alt="Lei de Proteção Animal" loading="lazy">
+                    </div>
+                    <div class="noticia-card-body">
+                        <h3>Lei nº 11.644/2025 cria Programa de Proteção Animal em Presidente Prudente</h3>
+                        <p>Programa Educacional de Conscientização e Proteção Animal aprovado, garantindo campanhas de castração, adoção responsável e educação sobre proteção animal nas escolas.</p>
+                    </div>
+                    <span class="noticia-card-link">Leia mais &raquo;</span>
+                </a>
+                <!-- Card 3 -->
+                <a href="#" class="noticia-card">
+                    <div class="noticia-card-img">
+                        <img src="images/infraestrutura.jpg" alt="Infraestrutura rural" loading="lazy">
+                    </div>
+                    <div class="noticia-card-body">
+                        <h3>Bozo cobra melhorias em estradas rurais da região do km 18</h3>
+                        <p>Vereador encaminha requerimentos ao executivo solicitando manutenção e pavimentação das estradas rurais que beneficiam produtores e moradores da zona rural.</p>
+                    </div>
+                    <span class="noticia-card-link">Leia mais &raquo;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ENCONTROS / GALERIA (Scroll horizontal como Aécio) ===== -->
+    <section class="encontros-section" id="trajetoria">
+        <div class="container">
+            <div class="section-top">
+                <h2 class="section-heading">Momentos Marcantes</h2>
+                <a href="#" class="section-more">Ver mais <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="encontros-scroll">
+                <div class="encontro-item">
+                    <img src="images/bozo-perfil.png" alt="Wellington Bozo - Vice-Presidente da Câmara" loading="lazy">
+                    <span class="encontro-caption">Vice-Presidente da Câmara Municipal</span>
+                </div>
+                <div class="encontro-item">
+                    <img src="images/bozo-protetoras.jpg" alt="Bozo com protetoras de animais" loading="lazy">
+                    <span class="encontro-caption">Com protetoras de animais de Presidente Prudente</span>
+                </div>
+                <div class="encontro-item">
+                    <img src="images/bozo-reuniao.jpg" alt="Reunião comunitária" loading="lazy">
+                    <span class="encontro-caption">Reunião com lideranças comunitárias</span>
+                </div>
+                <div class="encontro-item">
+                    <img src="images/causa-animal.jpg" alt="Ações pela causa animal" loading="lazy">
+                    <span class="encontro-caption">Ações pela causa animal</span>
+                </div>
+                <div class="encontro-item">
+                    <img src="images/juventude.jpg" alt="Juventude" loading="lazy">
+                    <span class="encontro-caption">MJC — Movimento Juventude Contrários</span>
+                </div>
+                <div class="encontro-item">
+                    <img src="images/inclusao.jpg" alt="Inclusão social" loading="lazy">
+                    <span class="encontro-caption">Projetos de inclusão social</span>
+                </div>
+                <div class="encontro-item">
+                    <img src="images/hero-slide-2.jpg" alt="Comunidade" loading="lazy">
+                    <span class="encontro-caption">Nas comunidades de Presidente Prudente</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRONUNCIAMENTOS E ENTREVISTAS (Cards como Aécio) ===== -->
+    <section class="pronunciamentos-section" id="pronunciamentos">
+        <div class="container">
+            <div class="section-top">
+                <h2 class="section-heading">Pronunciamentos e Entrevistas</h2>
+                <a href="#" class="section-more">Leia mais <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="pronunc-grid">
+                <a href="#" class="pronunc-card">
+                    <div class="pronunc-card-img">
+                        <img src="images/hero-denuncia-premiada.png" alt="Discurso na aprovação do PL" loading="lazy">
+                    </div>
+                    <div class="pronunc-card-body">
+                        <span class="pronunc-date">25 de fevereiro de 2026</span>
+                        <h3>Discurso na aprovação do PL da Denúncia Premiada</h3>
+                        <p>Wellington Bozo discursou na sessão que aprovou o PL 399/2026, destacando a importância da proteção animal e o papel dos cidadãos como fiscais contra maus-tratos.</p>
+                    </div>
+                    <span class="pronunc-link">Leia mais &raquo;</span>
+                </a>
+                <a href="../lei-11644-2025.html" class="pronunc-card">
+                    <div class="pronunc-card-img">
+                        <img src="images/saude.jpg" alt="Entrevista sobre Lei de Proteção" loading="lazy">
+                    </div>
+                    <div class="pronunc-card-body">
+                        <span class="pronunc-date">2025</span>
+                        <h3>Entrevista sobre a Lei de Proteção Animal nº 11.644</h3>
+                        <p>Em entrevista à imprensa local, o vereador explicou os pilares da nova lei que cria o Programa Educacional de Conscientização e Proteção Animal.</p>
+                    </div>
+                    <span class="pronunc-link">Leia mais &raquo;</span>
+                </a>
+                <a href="#" class="pronunc-card">
+                    <div class="pronunc-card-img">
+                        <img src="images/hero-slide-1.jpg" alt="Posse como Vice-Presidente" loading="lazy">
+                    </div>
+                    <div class="pronunc-card-body">
+                        <span class="pronunc-date">Janeiro de 2025</span>
+                        <h3>Posse como Vice-Presidente da Câmara Municipal</h3>
+                        <p>Reeleito com 1.833 votos, Wellington Bozo tomou posse na Mesa Diretora como Vice-Presidente da Câmara para a 19ª Legislatura (2025-2028).</p>
+                    </div>
+                    <span class="pronunc-link">Leia mais &raquo;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OPINIÃO (Carrossel com setas como Aécio) ===== -->
+    <section class="opiniao-section">
+        <div class="container">
+            <h2 class="section-heading section-heading-center">Opinião</h2>
+            <div class="opiniao-carousel">
+                <button class="opiniao-arrow opiniao-prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+                <button class="opiniao-arrow opiniao-next" aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
+
+                <div class="opiniao-slide active">
+                    <div class="opiniao-icon"><i class="fas fa-quote-left"></i></div>
+                    <blockquote>"A causa animal não é sobre política, é sobre humanidade. Uma cidade que cuida dos seus animais é uma cidade que cuida de todos os seus cidadãos."</blockquote>
+                    <cite>Wellington Bozo</cite>
+                </div>
+                <div class="opiniao-slide">
+                    <div class="opiniao-icon"><i class="fas fa-quote-left"></i></div>
+                    <blockquote>"O verdadeiro líder é aquele que nasceu no chão da comunidade e entende as necessidades do povo porque viveu cada uma delas."</blockquote>
+                    <cite>Wellington Bozo</cite>
+                </div>
+                <div class="opiniao-slide">
+                    <div class="opiniao-icon"><i class="fas fa-quote-left"></i></div>
+                    <blockquote>"Nenhuma criança deve crescer sem oportunidade. O Movimento Juventude Contrários nasceu para mostrar que os jovens da periferia têm voz e força para transformar."</blockquote>
+                    <cite>Wellington Bozo</cite>
+                </div>
+                <div class="opiniao-slide">
+                    <div class="opiniao-icon"><i class="fas fa-quote-left"></i></div>
+                    <blockquote>"A saúde pública não pode ser privilégio. Nosso PL 957/18 trouxe novas diretrizes para que o atendimento chegue a quem mais precisa, nos bairros mais distantes."</blockquote>
+                    <cite>Wellington Bozo</cite>
+                </div>
+                <div class="opiniao-slide">
+                    <div class="opiniao-icon"><i class="fas fa-quote-left"></i></div>
+                    <blockquote>"As estradas rurais são artérias que alimentam a cidade. Cuidar da infraestrutura rural é cuidar da economia e das famílias de Presidente Prudente."</blockquote>
+                    <cite>Wellington Bozo</cite>
+                </div>
+
+                <div class="opiniao-dots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== REDES SOCIAIS (Instagram + Facebook como Aécio) ===== -->
+    <section class="redes-section">
+        <div class="container">
+            <div class="redes-grid">
+                <!-- Instagram -->
+                <div class="rede-block">
+                    <div class="rede-header">
+                        <h3><i class="fab fa-instagram"></i> Instagram</h3>
+                        <a href="https://www.instagram.com/bozowellington/" target="_blank" class="rede-access">acessar</a>
+                    </div>
+                    <div class="insta-grid">
+                        <a href="https://www.instagram.com/bozowellington/" target="_blank" class="insta-item">
+                            <img src="images/causa-animal.jpg" alt="Post Instagram" loading="lazy">
+                        </a>
+                        <a href="https://www.instagram.com/bozowellington/" target="_blank" class="insta-item">
+                            <img src="images/bozo-protetoras.jpg" alt="Post Instagram" loading="lazy">
+                        </a>
+                        <a href="https://www.instagram.com/bozowellington/" target="_blank" class="insta-item">
+                            <img src="images/juventude.jpg" alt="Post Instagram" loading="lazy">
+                        </a>
+                        <a href="https://www.instagram.com/bozowellington/" target="_blank" class="insta-item">
+                            <img src="images/inclusao.jpg" alt="Post Instagram" loading="lazy">
+                        </a>
+                        <a href="https://www.instagram.com/bozowellington/" target="_blank" class="insta-item">
+                            <img src="images/infraestrutura.jpg" alt="Post Instagram" loading="lazy">
+                        </a>
+                        <a href="https://www.instagram.com/bozowellington/" target="_blank" class="insta-item">
+                            <img src="images/saude.jpg" alt="Post Instagram" loading="lazy">
+                        </a>
+                    </div>
+                </div>
+                <!-- Facebook -->
+                <div class="rede-block">
+                    <div class="rede-header">
+                        <h3><i class="fab fa-facebook-f"></i> Facebook</h3>
+                        <a href="https://www.facebook.com/VereadorWellingtonBozo/" target="_blank" class="rede-access">acessar</a>
+                    </div>
+                    <div class="fb-embed">
+                        <div class="fb-post">
+                            <div class="fb-post-header">
+                                <div class="fb-avatar"><img src="images/bozo-perfil.png" alt="WB"></div>
+                                <div class="fb-meta">
+                                    <strong>Wellington Bozo</strong>
+                                    <span>3 dias atrás</span>
+                                </div>
+                            </div>
+                            <p class="fb-text">Vitória para os animais de Presidente Prudente! 🐾 A Câmara aprovou nosso Projeto de Lei da Denúncia Premiada, que recompensa moradores que denunciarem maus-tratos contra animais. É mais um passo na nossa luta pela causa animal! 💙</p>
+                            <div class="fb-image">
+                                <img src="images/causa-animal.jpg" alt="Post Facebook" loading="lazy">
+                            </div>
+                            <div class="fb-actions">
+                                <span><i class="fas fa-thumbs-up"></i> Curtir</span>
+                                <span><i class="fas fa-comment"></i> Comentar</span>
+                                <span><i class="fas fa-share"></i> Compartilhar</span>
+                            </div>
+                        </div>
+                        <a href="https://www.facebook.com/VereadorWellingtonBozo/" target="_blank" class="fb-view-link">Visualizar no Facebook</a>
+                    </div>
+                    <div class="parceiros-links">
+                        <a href="https://camarapprudente.sp.gov.br/" target="_blank">Acessar site da Câmara Municipal</a>
+                        <a href="../causa-animal.html">Acessar Hub Causa Animal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VÍDEOS (Grid como Aécio) ===== -->
+    <section class="videos-section">
+        <div class="container">
+            <div class="section-top">
+                <h2 class="section-heading">Vídeos</h2>
+                <a href="https://www.youtube.com/" target="_blank" class="section-more">Todos os vídeos <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="videos-grid">
+                <div class="video-thumb">
+                    <img src="images/causa-animal.jpg" alt="Denúncia Premiada" loading="lazy">
+                    <div class="video-play"><i class="fas fa-play"></i></div>
+                    <span class="video-caption">Denúncia Premiada: como funciona o projeto</span>
+                </div>
+                <div class="video-thumb">
+                    <img src="images/juventude.jpg" alt="MJC 20 anos" loading="lazy">
+                    <div class="video-play"><i class="fas fa-play"></i></div>
+                    <span class="video-caption">Movimento Juventude Contrários: 20 anos</span>
+                </div>
+                <div class="video-thumb">
+                    <img src="images/infraestrutura.jpg" alt="Estradas rurais" loading="lazy">
+                    <div class="video-play"><i class="fas fa-play"></i></div>
+                    <span class="video-caption">A luta por estradas rurais melhores</span>
+                </div>
+                <div class="video-thumb">
+                    <img src="images/saude.jpg" alt="PL Saúde" loading="lazy">
+                    <div class="video-play"><i class="fas fa-play"></i></div>
+                    <span class="video-caption">PL 957/18: novas diretrizes de saúde</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOBRE / BIOGRAFIA ===== -->
+    <section class="sobre-section" id="sobre">
+        <div class="container">
+            <div class="sobre-layout">
+                <div class="sobre-photo">
+                    <img src="images/bozo-perfil.png" alt="Wellington Bozo">
+                    <div class="sobre-stamp">
+                        <span class="stamp-num">19+</span>
+                        <span class="stamp-txt">Anos de<br>Serviço Público</span>
+                    </div>
+                </div>
+                <div class="sobre-body">
+                    <span class="sobre-tag">Conheça o Vereador</span>
+                    <h2>Wellington Bozo</h2>
+                    <div class="sobre-divider"></div>
+                    <p class="sobre-role">Vice-Presidente da Câmara Municipal de Presidente Prudente<br>Republicanos | 19ª Legislatura (2025-2028)</p>
+                    <p>Wellington de Souza Neves, conhecido como Wellington Bozo, nasceu em Presidente Prudente (SP) em 30 de junho de 1985. Desde os 8 anos já trabalhava como engraxate, jardineiro, garçom e atendente. Aos 15 anos, começou sua trajetória de serviço voluntário organizando campanhas de agasalho e arrecadação de alimentos.</p>
+                    <p>Co-fundador do Movimento Juventude Contrários (MJC), que há duas décadas atua contra a corrupção, desigualdade social, racismo e bullying. Aos 22 anos, foi eleito presidente do bairro Jardim Maracanã, um dos mais jovens líderes comunitários da cidade.</p>
+                    <div class="sobre-stats-row">
+                        <div class="sobre-stat-item">
+                            <i class="fas fa-vote-yea"></i>
+                            <strong data-count="1833">0</strong>
+                            <span>Votos em 2024</span>
+                        </div>
+                        <div class="sobre-stat-item">
+                            <i class="fas fa-gavel"></i>
+                            <strong data-count="3">0</strong>
+                            <span>Mandatos</span>
+                        </div>
+                        <div class="sobre-stat-item">
+                            <i class="fas fa-trophy"></i>
+                            <strong>2x</strong>
+                            <span>Jovem Voluntário</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BANDEIRAS DE ATUAÇÃO ===== -->
+    <section class="bandeiras-section">
+        <div class="container">
+            <h2 class="section-heading section-heading-center">Bandeiras de Atuação</h2>
+            <div class="bandeiras-row">
+                <div class="bandeira-card">
+                    <div class="bandeira-img"><img src="images/causa-animal.jpg" alt="Causa Animal" loading="lazy"></div>
+                    <div class="bandeira-icon"><i class="fas fa-paw"></i></div>
+                    <h3>Causa Animal</h3>
+                    <p>Autor da Lei nº 11.644/2025 de proteção animal e do PL de recompensa por denúncias de maus-tratos.</p>
+                </div>
+                <div class="bandeira-card">
+                    <div class="bandeira-img"><img src="images/saude.jpg" alt="Saúde" loading="lazy"></div>
+                    <div class="bandeira-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Saúde</h3>
+                    <p>Autor do PL nº 957/18, aprovado em 2023, com novas diretrizes na legislação municipal de saúde.</p>
+                </div>
+                <div class="bandeira-card">
+                    <div class="bandeira-img"><img src="images/infraestrutura.jpg" alt="Infraestrutura Rural" loading="lazy"></div>
+                    <div class="bandeira-icon"><i class="fas fa-road"></i></div>
+                    <h3>Infraestrutura</h3>
+                    <p>Projetos de melhoria nas estradas rurais, beneficiando produtores e moradores da zona rural.</p>
+                </div>
+                <div class="bandeira-card">
+                    <div class="bandeira-img"><img src="images/inclusao.jpg" alt="Inclusão Social" loading="lazy"></div>
+                    <div class="bandeira-icon"><i class="fas fa-hands-helping"></i></div>
+                    <h3>Inclusão Social</h3>
+                    <p>Projetos de proteção para pessoas com TEA e promoção do respeito e dignidade aos idosos.</p>
+                </div>
+                <div class="bandeira-card">
+                    <div class="bandeira-img"><img src="images/juventude.jpg" alt="Juventude" loading="lazy"></div>
+                    <div class="bandeira-icon"><i class="fas fa-users"></i></div>
+                    <h3>Juventude</h3>
+                    <p>Presidente da Comissão de Políticas Públicas da Juventude e co-fundador do MJC.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CAUSA ANIMAL BANNER ===== -->
+    <section class="animal-cta">
+        <div class="container">
+            <div class="animal-cta-inner">
+                <div class="animal-cta-text">
+                    <span class="animal-label"><i class="fas fa-paw"></i> Causa Animal</span>
+                    <h2>Presidente Prudente Protege Seus <span>Animais</span></h2>
+                    <p>Wellington Bozo é referência na causa animal. Acompanhe as ações, denuncie maus-tratos, cadastre animais perdidos e conheça as ONGs parceiras.</p>
+                    <div class="animal-mini-stats">
+                        <div><i class="fas fa-gavel"></i><strong>3</strong><span>Leis</span></div>
+                        <div><i class="fas fa-hand-holding-usd"></i><strong>R$ 100 mil</strong><span>Emenda</span></div>
+                        <div><i class="fas fa-users"></i><strong>10+</strong><span>ONGs</span></div>
+                    </div>
+                    <div class="animal-btns">
+                        <a href="../causa-animal.html" class="btn-animal-primary"><i class="fas fa-heart"></i> Hub Animal</a>
+                        <a href="../animais-perdidos.html" class="btn-animal-outline"><i class="fas fa-search"></i> Animais Perdidos</a>
+                    </div>
+                </div>
+                <div class="animal-cta-photo">
+                    <img src="images/bozo-protetoras.jpg" alt="Causa Animal — Wellington Bozo" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTATO / FALE CONOSCO ===== -->
+    <section class="contato-section" id="contato">
+        <div class="container">
+            <h2 class="section-heading section-heading-center">Fale Conosco</h2>
+            <div class="contato-layout">
+                <div class="contato-info">
+                    <div class="contato-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Gabinete</h4>
+                            <p>Câmara Municipal de Presidente Prudente<br>Presidente Prudente - SP</p>
+                        </div>
+                    </div>
+                    <div class="contato-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>(18) 99999-9999</p>
+                        </div>
+                    </div>
+                    <div class="contato-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>E-mail</h4>
+                            <p>contato@wellingtonbozo.com.br</p>
+                        </div>
+                    </div>
+                    <div class="contato-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horário</h4>
+                            <p>Segunda a Sexta: 8h às 17h</p>
+                        </div>
+                    </div>
+                    <h4 style="margin-top: 24px;">Nossas redes</h4>
+                    <div class="contato-social">
+                        <a href="https://www.instagram.com/bozowellington/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/VereadorWellingtonBozo/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="contato-form-wrap">
+                    <h4>Acompanhe o meu mandato</h4>
+                    <form class="contato-form" id="contactForm">
+                        <input type="text" name="name" placeholder="Seu nome completo" required>
+                        <input type="email" name="email" placeholder="Seu e-mail" required>
+                        <textarea name="message" placeholder="Sua mensagem..." rows="5" required></textarea>
+                        <button type="submit"><i class="fas fa-paper-plane"></i> Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER (Padrão Aécio) ===== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <a href="#inicio" class="footer-home-link">Ir para a página inicial</a>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Endereço</h4>
+                    <p>Câmara Municipal de<br>Presidente Prudente<br>Presidente Prudente - SP</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <p><a href="mailto:contato@wellingtonbozo.com.br"><i class="fas fa-envelope"></i> contato@wellingtonbozo.com.br</a></p>
+                    <p><a href="tel:+5518999999999"><i class="fas fa-phone"></i> (18) 99999-9999</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Nossas redes</h4>
+                    <div class="footer-social-links">
+                        <a href="https://www.instagram.com/bozowellington/" target="_blank">Instagram</a>
+                        <a href="https://www.facebook.com/VereadorWellingtonBozo/" target="_blank">Facebook</a>
+                        <a href="#">YouTube</a>
+                        <a href="#">TikTok</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Acompanhe o mandato</h4>
+                    <form class="footer-newsletter">
+                        <input type="email" placeholder="Seu e-mail">
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Wellington Bozo — Vereador de Presidente Prudente. Todos os direitos reservados. | Template V2</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#inicio" class="back-top" id="backToTop"><i class="fas fa-chevron-up"></i></a>
+
+    <script src="js/main-v2.js"></script>
+</body>
+</html>
+
