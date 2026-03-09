@@ -1,0 +1,396 @@
+{
+  "lastUpdated": "2026-03-09T00:00:00Z",
+  "version": "1.0.0",
+
+  "settings": {
+    "siteName": "Wellington Bozo",
+    "siteTitle": "Wellington Bozo | Vereador — Template V2",
+    "siteDescription": "Wellington Bozo - Vereador de Presidente Prudente. Vice-Presidente da Câmara Municipal.",
+    "siteRole": "Vereador de Presidente Prudente",
+    "stampYears": "19+",
+    "stampText": "anos de serviço público",
+    "draftMode": true,
+    "draftText": "ESBOÇO V2 — Versão para aprovação. Não publicar.",
+    "social": {
+      "instagram": "https://www.instagram.com/bozowellington/",
+      "instagramHandle": "@bozowellington",
+      "facebook": "https://www.facebook.com/VereadorWellingtonBozo/",
+      "facebookHandle": "VereadorWellingtonBozo",
+      "youtube": "",
+      "youtubeHandle": "Wellington Bozo",
+      "tiktok": ""
+    },
+    "contact": {
+      "phone": "(18) 99999-9999",
+      "phoneRaw": "+5518999999999",
+      "email": "contato@wellingtonbozo.com.br",
+      "address": "Câmara Municipal de Presidente Prudente\nPresidente Prudente - SP",
+      "hours": "Segunda a Sexta: 8h às 17h",
+      "whatsapp": "5518999999999"
+    }
+  },
+
+  "heroSlides": [
+    {
+      "id": "slide-1",
+      "image": "images/hero-denuncia-premiada.png",
+      "title": "Câmara aprova Denúncia Premiada proposta por Bozo para proteção animal",
+      "description": "Projeto de Lei nº 399/2026 garante recompensa financeira para moradores que denunciarem maus-tratos contra animais em Presidente Prudente, com sigilo total ao denunciante.",
+      "link": "causa-animal.html",
+      "linkText": "Leia mais",
+      "active": true
+    },
+    {
+      "id": "slide-2",
+      "image": "images/hero-slide-2.jpg",
+      "title": "Wellington Bozo: \"A causa animal não é sobre política, é sobre humanidade\"",
+      "description": "Vice-Presidente da Câmara Municipal e autor da Lei nº 11.644/2025 de Proteção Animal, Wellington Bozo reafirma seu compromisso com Presidente Prudente.",
+      "link": "#sobre",
+      "linkText": "Leia mais",
+      "active": true
+    },
+    {
+      "id": "slide-3",
+      "image": "images/Vista_da_Catedral_-_Praça_9_de_Julho_-_Presidente_Prudente_-_SP.jpg",
+      "imagePosition": "center 35%",
+      "title": "Bozo cobra melhorias em estradas rurais e reforça compromisso com infraestrutura",
+      "description": "Vereador encaminha requerimentos solicitando manutenção e pavimentação das estradas rurais da região do km 18, beneficiando produtores e moradores da zona rural.",
+      "link": "#noticias",
+      "linkText": "Leia mais",
+      "active": true
+    },
+    {
+      "id": "slide-4",
+      "image": "images/bozo-protetoras.jpg",
+      "title": "Wellington Bozo reeleito Vice-Presidente da Câmara para a 19ª Legislatura",
+      "description": "Com 1.833 votos pelo Republicanos, Bozo assume mais um mandato com foco em causa animal, saúde, infraestrutura rural, inclusão social e juventude.",
+      "link": "#trajetoria",
+      "linkText": "Leia mais",
+      "active": true
+    },
+    {
+      "id": "slide-5",
+      "image": "images/hero-slide-3.jpg",
+      "title": "Lei nº 11.644/2025 cria Programa Educacional de Proteção Animal",
+      "description": "Programa garante campanhas de castração, adoção responsável e educação sobre proteção animal nas escolas do município de Presidente Prudente.",
+      "link": "causa-animal.html",
+      "linkText": "Leia mais",
+      "active": true
+    }
+  ],
+
+  "noticias": [
+    {
+      "id": "noticia-1",
+      "image": "images/causa-animal.jpg",
+      "imageAlt": "Denúncia Premiada aprovada na Câmara",
+      "title": "Câmara aprova Denúncia Premiada: recompensa a quem denunciar maus-tratos contra animais",
+      "description": "Projeto de Lei nº 399/2026 de autoria do vereador Wellington Bozo garante recompensa financeira para moradores que denunciarem maus-tratos contra animais em Presidente Prudente.",
+      "link": "#",
+      "date": "2026-02-25"
+    },
+    {
+      "id": "noticia-2",
+      "image": "images/bozo-protetoras.jpg",
+      "imageAlt": "Lei de Proteção Animal",
+      "title": "Lei nº 11.644/2025 cria Programa de Proteção Animal em Presidente Prudente",
+      "description": "Programa Educacional de Conscientização e Proteção Animal aprovado, garantindo campanhas de castração, adoção responsável e educação sobre proteção animal nas escolas.",
+      "link": "causa-animal.html",
+      "date": "2025-01-01"
+    },
+    {
+      "id": "noticia-3",
+      "image": "images/infraestrutura.jpg",
+      "imageAlt": "Infraestrutura rural",
+      "title": "Bozo cobra melhorias em estradas rurais da região do km 18",
+      "description": "Vereador encaminha requerimentos ao executivo solicitando manutenção e pavimentação das estradas rurais que beneficiam produtores e moradores da zona rural.",
+      "link": "#",
+      "date": "2026-01-15"
+    }
+  ],
+
+  "cityParallax": {
+    "tag": "Presidente Prudente — SP",
+    "title": "A Capital do Oeste Paulista",
+    "description": "Localizada no coração do Oeste de São Paulo, Presidente Prudente é referência em educação, saúde e qualidade de vida. Wellington Bozo trabalha todos os dias para torná-la ainda melhor.",
+    "image": "images/Vista_da_Catedral_-_Praça_9_de_Julho_-_Presidente_Prudente_-_SP.jpg"
+  },
+
+  "galeria": [
+    { "id": "gal-1", "image": "images/bozo-perfil.png", "caption": "Vice-Presidente da Câmara Municipal" },
+    { "id": "gal-2", "image": "images/bozo-protetoras.jpg", "caption": "Com protetoras de animais de Presidente Prudente" },
+    { "id": "gal-3", "image": "images/bozo-reuniao.jpg", "caption": "Reunião com lideranças comunitárias" },
+    { "id": "gal-4", "image": "images/causa-animal.jpg", "caption": "Ações pela causa animal" },
+    { "id": "gal-5", "image": "images/juventude.jpg", "caption": "MJC — Movimento Juventude Contrários" },
+    { "id": "gal-6", "image": "images/inclusao.jpg", "caption": "Projetos de inclusão social" },
+    { "id": "gal-7", "image": "images/hero-slide-2.jpg", "caption": "Nas comunidades de Presidente Prudente" }
+  ],
+
+  "pronunciamentos": [
+    {
+      "id": "pronunc-1",
+      "image": "images/hero-denuncia-premiada.png",
+      "imageAlt": "Discurso na aprovação do PL",
+      "date": "25 de fevereiro de 2026",
+      "title": "Discurso na aprovação do PL da Denúncia Premiada",
+      "description": "Wellington Bozo discursou na sessão que aprovou o PL 399/2026, destacando a importância da proteção animal e o papel dos cidadãos como fiscais contra maus-tratos.",
+      "link": "#"
+    },
+    {
+      "id": "pronunc-2",
+      "image": "images/saude.jpg",
+      "imageAlt": "Entrevista sobre Lei de Proteção",
+      "date": "2025",
+      "title": "Entrevista sobre a Lei de Proteção Animal nº 11.644",
+      "description": "Em entrevista à imprensa local, o vereador explicou os pilares da nova lei que cria o Programa Educacional de Conscientização e Proteção Animal.",
+      "link": "causa-animal.html"
+    },
+    {
+      "id": "pronunc-3",
+      "image": "images/hero-slide-1.jpg",
+      "imageAlt": "Posse como Vice-Presidente",
+      "date": "Janeiro de 2025",
+      "title": "Posse como Vice-Presidente da Câmara Municipal",
+      "description": "Reeleito com 1.833 votos, Wellington Bozo tomou posse na Mesa Diretora como Vice-Presidente da Câmara para a 19ª Legislatura (2025-2028).",
+      "link": "#"
+    }
+  ],
+
+  "opinioes": [
+    { "id": "op-1", "quote": "A causa animal não é sobre política, é sobre humanidade. Uma cidade que cuida dos seus animais é uma cidade que cuida de todos os seus cidadãos.", "author": "Wellington Bozo" },
+    { "id": "op-2", "quote": "O verdadeiro líder é aquele que nasceu no chão da comunidade e entende as necessidades do povo porque viveu cada uma delas.", "author": "Wellington Bozo" },
+    { "id": "op-3", "quote": "Nenhuma criança deve crescer sem oportunidade. O Movimento Juventude Contrários nasceu para mostrar que os jovens da periferia têm voz e força para transformar.", "author": "Wellington Bozo" },
+    { "id": "op-4", "quote": "A saúde pública não pode ser privilégio. Nosso PL 957/18 trouxe novas diretrizes para que o atendimento chegue a quem mais precisa, nos bairros mais distantes.", "author": "Wellington Bozo" },
+    { "id": "op-5", "quote": "As estradas rurais são artérias que alimentam a cidade. Cuidar da infraestrutura rural é cuidar da economia e das famílias de Presidente Prudente.", "author": "Wellington Bozo" }
+  ],
+
+  "videos": [
+    { "id": "vid-1", "thumbnail": "images/causa-animal.jpg", "caption": "Denúncia Premiada: como funciona o projeto", "url": "" },
+    { "id": "vid-2", "thumbnail": "images/juventude.jpg", "caption": "Movimento Juventude Contrários: 20 anos", "url": "" },
+    { "id": "vid-3", "thumbnail": "images/infraestrutura.jpg", "caption": "A luta por estradas rurais melhores", "url": "" },
+    { "id": "vid-4", "thumbnail": "images/saude.jpg", "caption": "PL 957/18: novas diretrizes de saúde", "url": "" }
+  ],
+
+  "sobre": {
+    "photo": "images/bozo-perfil.png",
+    "tag": "Conheça o Vereador",
+    "name": "Wellington Bozo",
+    "role": "Vice-Presidente da Câmara Municipal de Presidente Prudente\nRepublicanos | 19ª Legislatura (2025-2028)",
+    "bio": [
+      "Wellington de Souza Neves, conhecido como Wellington Bozo, nasceu em Presidente Prudente (SP) em 30 de junho de 1985. Desde os 8 anos já trabalhava como engraxate, jardineiro, garçom e atendente. Aos 15 anos, começou sua trajetória de serviço voluntário organizando campanhas de agasalho e arrecadação de alimentos.",
+      "Co-fundador do Movimento Juventude Contrários (MJC), que há duas décadas atua contra a corrupção, desigualdade social, racismo e bullying. Aos 22 anos, foi eleito presidente do bairro Jardim Maracanã, um dos mais jovens líderes comunitários da cidade."
+    ],
+    "stats": [
+      { "icon": "fas fa-vote-yea", "value": "1833", "label": "Votos em 2024", "isCounter": true },
+      { "icon": "fas fa-gavel", "value": "3", "label": "Mandatos", "isCounter": true },
+      { "icon": "fas fa-trophy", "value": "2x", "label": "Jovem Voluntário", "isCounter": false }
+    ]
+  },
+
+  "bandeiras": [
+    { "id": "band-1", "image": "images/causa-animal.jpg", "icon": "fas fa-paw", "title": "Causa Animal", "description": "Autor da Lei nº 11.644/2025 de proteção animal e do PL de recompensa por denúncias de maus-tratos." },
+    { "id": "band-2", "image": "images/saude.jpg", "icon": "fas fa-heartbeat", "title": "Saúde", "description": "Autor do PL nº 957/18, aprovado em 2023, com novas diretrizes na legislação municipal de saúde." },
+    { "id": "band-3", "image": "images/infraestrutura.jpg", "icon": "fas fa-road", "title": "Infraestrutura", "description": "Projetos de melhoria nas estradas rurais, beneficiando produtores e moradores da zona rural." },
+    { "id": "band-4", "image": "images/inclusao.jpg", "icon": "fas fa-hands-helping", "title": "Inclusão Social", "description": "Projetos de proteção para pessoas com TEA e promoção do respeito e dignidade aos idosos." },
+    { "id": "band-5", "image": "images/juventude.jpg", "icon": "fas fa-users", "title": "Juventude", "description": "Presidente da Comissão de Políticas Públicas da Juventude e co-fundador do MJC." }
+  ],
+
+  "cidade": {
+    "title": "Presidente Prudente",
+    "description": "Município localizado no extremo oeste do Estado de São Paulo, fundado em 1917. Polo regional de educação, saúde e tecnologia, a cidade é referência no interior paulista.",
+    "image": "images/Vista_da_Catedral_-_Praça_9_de_Julho_-_Presidente_Prudente_-_SP.jpg",
+    "imageCaption": "Praça 9 de Julho — Catedral de São Sebastião",
+    "facts": [
+      { "icon": "fas fa-users", "value": "230000", "label": "Habitantes", "isCounter": true },
+      { "icon": "fas fa-expand-arrows-alt", "value": "562 km²", "label": "Área", "isCounter": false },
+      { "icon": "fas fa-graduation-cap", "value": "4", "label": "Universidades", "isCounter": false },
+      { "icon": "fas fa-calendar-alt", "value": "1917", "label": "Fundação", "isCounter": false }
+    ]
+  },
+
+  "causaAnimal": {
+    "hero": {
+      "tag": "Causa Animal",
+      "title": "Protegendo Quem Não Tem Voz",
+      "description": "Ações, leis e projetos do vereador Wellington Bozo pela proteção e bem-estar animal em Presidente Prudente.",
+      "image": "images/causa-animal.jpg",
+      "stats": [
+        { "value": "3", "label": "Leis Aprovadas", "isCounter": true },
+        { "value": "R$ 100 mil", "label": "Emenda Animal", "isCounter": false },
+        { "value": "10", "label": "ONGs Parceiras", "isCounter": true }
+      ]
+    },
+    "noticias": [
+      {
+        "id": "animal-news-1",
+        "type": "featured",
+        "image": "images/causa-animal.jpg",
+        "imageAlt": "R$ 100 mil para causa animal",
+        "badge": "Destaque",
+        "badgeType": "destaque",
+        "date": "Março 2026",
+        "category": "Investimento",
+        "title": "Wellington Bozo destina R$ 100 mil para causa animal",
+        "description": "Vereador direciona emenda parlamentar de R$ 100 mil para a causa animal em Presidente Prudente, fortalecendo saúde e área social. Os recursos serão utilizados para castração, vacinação e cuidados veterinários para animais em situação de abandono.",
+        "link": "https://www.diariodeprudente.com/vereador-wellington-bozo-destina-r-100-mil-para-causa-animal-e-tambem-fortalece-saude-e-area-social-em-prudente/",
+        "linkText": "Ler matéria completa",
+        "external": true
+      },
+      {
+        "id": "animal-news-2",
+        "type": "card",
+        "image": "images/hero-denuncia-premiada.png",
+        "imageAlt": "Denúncia Premiada",
+        "badge": "Lei Aprovada",
+        "badgeType": "lei",
+        "date": "Fev 2026",
+        "title": "Câmara aprova recompensa por denúncia de maus-tratos",
+        "description": "PL nº 399/2026 estabelece recompensa financeira para moradores que denunciarem maus-tratos contra animais, com sigilo garantido.",
+        "link": "https://g1.globo.com/sp/presidente-prudente-e-regiao/noticia/2026/02/25/camara-de-presidente-prudente-aprova-recompensa-a-quem-denunciar-maus-tratos-contra-animais-entenda-o-projeto.ghtml",
+        "linkText": "Ler no G1",
+        "external": true
+      },
+      {
+        "id": "animal-news-3",
+        "type": "card",
+        "image": "images/bozo-protetoras.jpg",
+        "imageAlt": "Reunião com protetoras",
+        "badge": "Reunião",
+        "badgeType": "reuniao",
+        "date": "08 Jan 2026",
+        "title": "Reunião com protetoras independentes e ONG Astae",
+        "description": "Wellington Bozo se reuniu com protetoras e representantes da ONG Astae para discutir melhorias e novos projetos voltados à causa animal.",
+        "link": "#reuniao-protetoras",
+        "linkText": "Ler mais",
+        "external": false
+      },
+      {
+        "id": "animal-news-4",
+        "type": "card",
+        "image": "images/bozo-reuniao.jpg",
+        "imageAlt": "Lei de Proteção Animal",
+        "badge": "Lei",
+        "badgeType": "lei",
+        "date": "2025",
+        "title": "Lei de Conscientização e Proteção Animal sancionada",
+        "description": "Lei nº 11.644/2025 institui Programa Educacional de Proteção Animal nas escolas de Presidente Prudente.",
+        "link": "#leis-animal",
+        "linkText": "Ler mais",
+        "external": false
+      }
+    ],
+    "leis": [
+      {
+        "id": "lei-1",
+        "badge": "Aprovado",
+        "badgeType": "approved",
+        "year": "2025",
+        "icon": "fas fa-paw",
+        "title": "Lei nº 11.644/2025",
+        "description": "Programa Educacional de Conscientização e Proteção Animal no município de Presidente Prudente.",
+        "details": ["Campanhas de castração", "Adoção responsável", "Educação nas escolas"],
+        "link": "#",
+        "featured": false
+      },
+      {
+        "id": "lei-2",
+        "badge": "Aprovado",
+        "badgeType": "approved",
+        "year": "Fev/2026",
+        "icon": "fas fa-shield-alt",
+        "title": "PL nº 399/2026 — Denúncia Premiada",
+        "description": "Recompensa financeira para moradores que denunciarem maus-tratos contra animais, com sigilo garantido ao denunciante.",
+        "details": ["Recompensa ao denunciante", "Sigilo garantido", "Canal oficial de denúncia"],
+        "link": "https://g1.globo.com/sp/presidente-prudente-e-regiao/noticia/2026/02/25/camara-de-presidente-prudente-aprova-recompensa-a-quem-denunciar-maus-tratos-contra-animais-entenda-o-projeto.ghtml",
+        "featured": true
+      },
+      {
+        "id": "lei-3",
+        "badge": "Emenda",
+        "badgeType": "emenda",
+        "year": "2026",
+        "icon": "fas fa-hand-holding-usd",
+        "title": "R$ 100 mil para Causa Animal",
+        "description": "Emenda parlamentar destinando recursos para castração, vacinação e cuidados veterinários.",
+        "details": ["Castração gratuita", "Vacinação", "Cuidados veterinários"],
+        "link": "https://www.diariodeprudente.com/vereador-wellington-bozo-destina-r-100-mil-para-causa-animal-e-tambem-fortalece-saude-e-area-social-em-prudente/",
+        "featured": false
+      }
+    ],
+    "projetos": [
+      {
+        "id": "proj-1",
+        "icon": "fas fa-syringe",
+        "status": "active",
+        "statusText": "Em execução",
+        "title": "Mutirão de Castração Gratuita",
+        "description": "Programa de castração gratuita em parceria com clínicas veterinárias locais. Já foram realizadas mais de 500 castrações em animais de famílias carentes.",
+        "progress": 72,
+        "progressText": "72% da meta atingida"
+      },
+      {
+        "id": "proj-2",
+        "icon": "fas fa-graduation-cap",
+        "status": "active",
+        "statusText": "Em execução",
+        "title": "Educação Animal nas Escolas",
+        "description": "Implementação da Lei nº 11.644/2025 com palestras e atividades educativas sobre proteção animal em escolas municipais de Presidente Prudente.",
+        "progress": 45,
+        "progressText": "45% das escolas atendidas"
+      },
+      {
+        "id": "proj-3",
+        "icon": "fas fa-home",
+        "status": "planned",
+        "statusText": "Planejado",
+        "title": "Centro Municipal de Proteção Animal",
+        "description": "Projeto para criação de um centro de acolhimento temporário para animais resgatados, com atendimento veterinário e programa de adoção responsável.",
+        "progress": 15,
+        "progressText": "15% — fase de projeto"
+      },
+      {
+        "id": "proj-4",
+        "icon": "fas fa-id-card",
+        "status": "planned",
+        "statusText": "Planejado",
+        "title": "Identificação e Microchipagem",
+        "description": "Programa de microchipagem gratuita para animais de famílias de baixa renda, facilitando a identificação e reduzindo o abandono.",
+        "progress": 8,
+        "progressText": "8% — análise legislativa"
+      }
+    ],
+    "protetores": [
+      { "id": "prot-1", "icon": "fas fa-paw", "name": "ONG Astae", "description": "Organização dedicada à proteção e bem-estar animal. Atua em resgate, castração e adoção responsável em Presidente Prudente.", "tag": "ONG" },
+      { "id": "prot-2", "icon": "fas fa-heart", "name": "Protetoras Independentes", "description": "Grupo de protetoras que atuam na linha de frente, resgatando, cuidando e buscando lares para animais abandonados.", "tag": "Independente" },
+      { "id": "prot-3", "icon": "fas fa-hand-holding-heart", "name": "Rede de Voluntários", "description": "Voluntários da comunidade que auxiliam em feiras de adoção, mutirões de castração e campanhas de conscientização.", "tag": "Voluntários" }
+    ],
+    "denuncia": {
+      "channels": [
+        { "icon": "fas fa-phone-alt", "title": "Disque Denúncia", "number": "181", "link": "tel:181", "desc": "Ligação anônima 24h" },
+        { "icon": "fas fa-building", "title": "Gabinete Bozo", "number": "(18) 99999-9999", "link": "tel:+5518999999999", "desc": "Seg a Sex, 8h-17h" },
+        { "icon": "fas fa-shield-alt", "title": "Polícia Ambiental", "number": "190", "link": "tel:190", "desc": "Emergências 24h" },
+        { "icon": "fab fa-whatsapp", "title": "WhatsApp", "number": "(18) 99999-9999", "link": "https://wa.me/5518999999999?text=Olá%2C%20gostaria%20de%20denunciar%20maus-tratos%20contra%20animais", "desc": "Envie fotos e localização", "isWhatsapp": true }
+      ],
+      "tips": [
+        "Anote o endereço completo ou envie a localização GPS",
+        "Tire fotos ou grave vídeos como evidência (se possível)",
+        "Descreva a situação com detalhes e horários",
+        "Informe se há risco iminente ao animal"
+      ]
+    }
+  },
+
+  "instagram": [
+    { "id": "insta-1", "image": "images/causa-animal.jpg", "alt": "Post Instagram" },
+    { "id": "insta-2", "image": "images/bozo-protetoras.jpg", "alt": "Post Instagram" },
+    { "id": "insta-3", "image": "images/juventude.jpg", "alt": "Post Instagram" },
+    { "id": "insta-4", "image": "images/inclusao.jpg", "alt": "Post Instagram" },
+    { "id": "insta-5", "image": "images/infraestrutura.jpg", "alt": "Post Instagram" },
+    { "id": "insta-6", "image": "images/saude.jpg", "alt": "Post Instagram" }
+  ],
+
+  "facebookPost": {
+    "text": "Vitória para os animais de Presidente Prudente! 🐾 A Câmara aprovou nosso Projeto de Lei da Denúncia Premiada, que recompensa moradores que denunciarem maus-tratos contra animais. É mais um passo na nossa luta pela causa animal! 💙",
+    "image": "images/causa-animal.jpg"
+  }
+}
