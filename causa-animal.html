@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hub Causa Animal — Vereador Wellington Bozo. Proteção animal, notícias, leis, projetos e Disque Denúncia em Presidente Prudente.">
+    <title>Causa Animal | Wellington Bozo — Vereador</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style-v2.css">
+    <link rel="stylesheet" href="css/hub-animal.css">
+</head>
+<body>
+
+    <!-- ===== HEADER (mesmo do index) ===== -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-main">
+            <div class="container">
+                <div class="header-inner">
+                    <a href="index.html" class="header-logo">
+                        <div class="logo-badge"><i class="fas fa-landmark"></i></div>
+                        <div class="logo-info">
+                            <span class="logo-name">Wellington Bozo</span>
+                            <span class="logo-role">Vereador de Presidente Prudente</span>
+                        </div>
+                    </a>
+                    <a href="index.html#sobre" class="header-stamp">
+                        <span class="stamp-years">19+</span>
+                        <span class="stamp-text">anos de<br>serviço público</span>
+                    </a>
+                    <nav class="header-nav" id="headerNav">
+                        <a href="index.html" class="header-nav-link">Home</a>
+                        <a href="index.html#sobre" class="header-nav-link">Sobre</a>
+                        <a href="index.html#noticias" class="header-nav-link">Notícias</a>
+                        <a href="causa-animal.html" class="header-nav-link active"><i class="fas fa-paw"></i> Causa Animal</a>
+                        <a href="index.html#contato" class="header-nav-link">Fale Conosco</a>
+                    </nav>
+                    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO CAUSA ANIMAL ===== -->
+    <section class="hub-hero">
+        <div class="hub-hero-bg" style="background-image: url('images/causa-animal.jpg');"></div>
+        <div class="hub-hero-overlay"></div>
+        <div class="hub-hero-particles" id="heroParticles"></div>
+        <div class="container">
+            <div class="hub-hero-content">
+                <span class="hub-hero-tag"><i class="fas fa-paw"></i> Causa Animal</span>
+                <h1>Protegendo Quem<br>Não Tem Voz <span class="paw-emoji">🐾</span></h1>
+                <p>Ações, leis e projetos do vereador Wellington Bozo pela proteção e bem-estar animal em Presidente Prudente.</p>
+                <div class="hub-hero-stats">
+                    <div class="hub-stat">
+                        <strong data-count="3">0</strong>
+                        <span>Leis Aprovadas</span>
+                    </div>
+                    <div class="hub-stat">
+                        <strong>R$ 100 mil</strong>
+                        <span>Emenda Animal</span>
+                    </div>
+                    <div class="hub-stat">
+                        <strong data-count="10">0</strong>
+                        <span>ONGs Parceiras</span>
+                    </div>
+                </div>
+                <div class="hub-hero-actions">
+                    <a href="#noticias-animal" class="hub-btn-primary"><i class="fas fa-newspaper"></i> Notícias</a>
+                    <a href="#denunciar" class="hub-btn-danger"><i class="fas fa-exclamation-triangle"></i> Denunciar Maus-Tratos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== QUICK ACTIONS ===== -->
+    <section class="hub-quick-actions">
+        <div class="container">
+            <div class="quick-grid">
+                <a href="#denunciar" class="quick-item quick-item-danger">
+                    <div class="quick-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <span>Denunciar Maus-Tratos</span>
+                </a>
+                <a href="#leis-animal" class="quick-item">
+                    <div class="quick-icon"><i class="fas fa-gavel"></i></div>
+                    <span>Leis de Proteção</span>
+                </a>
+                <a href="#projetos-animal" class="quick-item">
+                    <div class="quick-icon"><i class="fas fa-project-diagram"></i></div>
+                    <span>Projetos</span>
+                </a>
+                <a href="#protetores" class="quick-item">
+                    <div class="quick-icon"><i class="fas fa-heart"></i></div>
+                    <span>Protetores & ONGs</span>
+                </a>
+                <a href="#noticias-animal" class="quick-item">
+                    <div class="quick-icon"><i class="fas fa-newspaper"></i></div>
+                    <span>Últimas Notícias</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NOTÍCIAS CAUSA ANIMAL ===== -->
+    <section class="hub-news" id="noticias-animal">
+        <div class="container">
+            <div class="hub-section-header">
+                <span class="hub-label"><i class="fas fa-paw"></i> Atualizações</span>
+                <h2>Últimas Notícias da Causa Animal</h2>
+                <div class="hub-divider"></div>
+            </div>
+
+            <div class="hub-news-grid">
+                <!-- DESTAQUE -->
+                <article class="hub-news-featured">
+                    <div class="hub-news-img">
+                        <img src="images/causa-animal.jpg" alt="R$ 100 mil para causa animal" loading="lazy">
+                        <span class="hub-news-badge">Destaque</span>
+                    </div>
+                    <div class="hub-news-body">
+                        <div class="hub-news-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Março 2026</span>
+                            <span class="hub-news-cat">Investimento</span>
+                        </div>
+                        <h3>Wellington Bozo destina R$ 100 mil para causa animal</h3>
+                        <p>Vereador direciona emenda parlamentar de R$ 100 mil para a causa animal em Presidente Prudente, fortalecendo saúde e área social. Os recursos serão utilizados para castração, vacinação e cuidados veterinários para animais em situação de abandono.</p>
+                        <a href="https://www.diariodeprudente.com/vereador-wellington-bozo-destina-r-100-mil-para-causa-animal-e-tambem-fortalece-saude-e-area-social-em-prudente/" target="_blank" class="hub-news-link">Ler matéria completa <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="hub-news-card">
+                    <div class="hub-news-img">
+                        <img src="images/hero-denuncia-premiada.png" alt="Denúncia Premiada" loading="lazy">
+                        <span class="hub-news-badge hub-news-badge-lei">Lei Aprovada</span>
+                    </div>
+                    <div class="hub-news-body">
+                        <div class="hub-news-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Fev 2026</span>
+                        </div>
+                        <h3>Câmara aprova recompensa por denúncia de maus-tratos</h3>
+                        <p>PL nº 399/2026 estabelece recompensa financeira para moradores que denunciarem maus-tratos contra animais, com sigilo garantido.</p>
+                        <a href="https://g1.globo.com/sp/presidente-prudente-e-regiao/noticia/2026/02/25/camara-de-presidente-prudente-aprova-recompensa-a-quem-denunciar-maus-tratos-contra-animais-entenda-o-projeto.ghtml" target="_blank" class="hub-news-link">Ler no G1 <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </article>
+
+                <!-- CARD 3 -->
+                <article class="hub-news-card">
+                    <div class="hub-news-img">
+                        <img src="images/bozo-protetoras.jpg" alt="Reunião com protetoras" loading="lazy">
+                        <span class="hub-news-badge hub-news-badge-reuniao">Reunião</span>
+                    </div>
+                    <div class="hub-news-body">
+                        <div class="hub-news-meta">
+                            <span><i class="fas fa-calendar-alt"></i> 08 Jan 2026</span>
+                        </div>
+                        <h3>Reunião com protetoras independentes e ONG Astae</h3>
+                        <p>Wellington Bozo se reuniu com protetoras e representantes da ONG Astae para discutir melhorias e novos projetos voltados à causa animal.</p>
+                        <a href="#reuniao-protetoras" class="hub-news-link">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- CARD 4 -->
+                <article class="hub-news-card">
+                    <div class="hub-news-img">
+                        <img src="images/bozo-reuniao.jpg" alt="Lei de Proteção Animal" loading="lazy">
+                        <span class="hub-news-badge hub-news-badge-lei">Lei</span>
+                    </div>
+                    <div class="hub-news-body">
+                        <div class="hub-news-meta">
+                            <span><i class="fas fa-calendar-alt"></i> 2025</span>
+                        </div>
+                        <h3>Lei de Conscientização e Proteção Animal sancionada</h3>
+                        <p>Lei nº 11.644/2025 institui Programa Educacional de Proteção Animal nas escolas de Presidente Prudente.</p>
+                        <a href="#leis-animal" class="hub-news-link">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== REUNIÃO COM PROTETORAS — Artigo Destaque ===== -->
+    <section class="hub-article" id="reuniao-protetoras">
+        <div class="container">
+            <div class="hub-article-grid">
+                <div class="hub-article-images">
+                    <div class="hub-article-img-main">
+                        <img src="images/bozo-protetoras.jpg" alt="Wellington Bozo com protetoras" loading="lazy">
+                    </div>
+                    <div class="hub-article-img-row">
+                        <img src="images/bozo-reuniao.jpg" alt="Reunião causa animal" loading="lazy">
+                        <img src="images/causa-animal.jpg" alt="Causa animal" loading="lazy">
+                    </div>
+                </div>
+                <div class="hub-article-text">
+                    <span class="hub-article-date"><i class="fas fa-calendar-alt"></i> 08 de Janeiro de 2026</span>
+                    <h2>Reunião com Protetoras Independentes e ONG Astae</h2>
+                    <div class="hub-divider hub-divider-left"></div>
+                    <p>Hoje me reuni com protetoras independentes e representantes da ONG Astae para conversar sobre melhorias e novos projetos voltados à causa animal em nossa cidade.</p>
+                    <p>Durante a reunião, apresentei os projetos que estarão pautados nas próximas sessões, ouvi as demandas das protetoras e trocamos ideias sobre ações que podem ser colocadas em prática.</p>
+                    <p>Reforcei a importância do trabalho das protetoras individuais, que estão na linha de frente todos os dias, cuidando e protegendo animais. Meu papel tem sido ouvir, apoiar e buscar caminhos junto ao poder público para fortalecer essa causa.</p>
+                    <p class="hub-article-highlight"><i class="fas fa-quote-left"></i> Seguimos dialogando e construindo soluções de forma conjunta. 🐾</p>
+                    <div class="hub-article-author">
+                        <img src="images/bozo-perfil.png" alt="Wellington Bozo" class="hub-author-avatar">
+                        <div>
+                            <strong>Wellington Bozo</strong>
+                            <span>Vereador de Presidente Prudente</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LEIS DE PROTEÇÃO ANIMAL ===== -->
+    <section class="hub-laws" id="leis-animal">
+        <div class="container">
+            <div class="hub-section-header">
+                <span class="hub-label"><i class="fas fa-gavel"></i> Legislação</span>
+                <h2>Leis de Proteção Animal</h2>
+                <div class="hub-divider"></div>
+                <p class="hub-section-desc">Conheça as leis e projetos aprovados em defesa dos animais de Presidente Prudente</p>
+            </div>
+
+            <div class="hub-laws-grid">
+                <div class="hub-law-card">
+                    <div class="hub-law-top">
+                        <span class="hub-law-badge hub-law-approved"><i class="fas fa-check-circle"></i> Aprovado</span>
+                        <span class="hub-law-year">2025</span>
+                    </div>
+                    <div class="hub-law-icon"><i class="fas fa-paw"></i></div>
+                    <h3>Lei nº 11.644/2025</h3>
+                    <p>Programa Educacional de Conscientização e Proteção Animal no município de Presidente Prudente.</p>
+                    <ul class="hub-law-details">
+                        <li><i class="fas fa-check"></i> Campanhas de castração</li>
+                        <li><i class="fas fa-check"></i> Adoção responsável</li>
+                        <li><i class="fas fa-check"></i> Educação nas escolas</li>
+                    </ul>
+                    <a href="#" class="hub-law-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="hub-law-card hub-law-card-featured">
+                    <div class="hub-law-top">
+                        <span class="hub-law-badge hub-law-approved"><i class="fas fa-check-circle"></i> Aprovado</span>
+                        <span class="hub-law-year">Fev/2026</span>
+                    </div>
+                    <div class="hub-law-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>PL nº 399/2026 — Denúncia Premiada</h3>
+                    <p>Recompensa financeira para moradores que denunciarem maus-tratos contra animais, com sigilo garantido ao denunciante.</p>
+                    <ul class="hub-law-details">
+                        <li><i class="fas fa-check"></i> Recompensa ao denunciante</li>
+                        <li><i class="fas fa-check"></i> Sigilo garantido</li>
+                        <li><i class="fas fa-check"></i> Canal oficial de denúncia</li>
+                    </ul>
+                    <a href="https://g1.globo.com/sp/presidente-prudente-e-regiao/noticia/2026/02/25/camara-de-presidente-prudente-aprova-recompensa-a-quem-denunciar-maus-tratos-contra-animais-entenda-o-projeto.ghtml" target="_blank" class="hub-law-link">Saiba mais <i class="fas fa-external-link-alt"></i></a>
+                </div>
+
+                <div class="hub-law-card">
+                    <div class="hub-law-top">
+                        <span class="hub-law-badge hub-law-emenda"><i class="fas fa-dollar-sign"></i> Emenda</span>
+                        <span class="hub-law-year">2026</span>
+                    </div>
+                    <div class="hub-law-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h3>R$ 100 mil para Causa Animal</h3>
+                    <p>Emenda parlamentar destinando recursos para castração, vacinação e cuidados veterinários.</p>
+                    <ul class="hub-law-details">
+                        <li><i class="fas fa-check"></i> Castração gratuita</li>
+                        <li><i class="fas fa-check"></i> Vacinação</li>
+                        <li><i class="fas fa-check"></i> Cuidados veterinários</li>
+                    </ul>
+                    <a href="https://www.diariodeprudente.com/vereador-wellington-bozo-destina-r-100-mil-para-causa-animal-e-tambem-fortalece-saude-e-area-social-em-prudente/" target="_blank" class="hub-law-link">Saiba mais <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROJETOS EM ANDAMENTO ===== -->
+    <section class="hub-projects" id="projetos-animal">
+        <div class="hub-projects-bg" style="background-image: url('images/cta-bg.jpg');"></div>
+        <div class="hub-projects-overlay"></div>
+        <div class="container">
+            <div class="hub-section-header hub-section-header-light">
+                <span class="hub-label hub-label-light"><i class="fas fa-project-diagram"></i> Em Andamento</span>
+                <h2>Projetos de Proteção Animal</h2>
+                <div class="hub-divider hub-divider-accent"></div>
+            </div>
+
+            <div class="hub-projects-timeline">
+                <div class="hub-timeline-item">
+                    <div class="hub-timeline-marker">
+                        <i class="fas fa-syringe"></i>
+                    </div>
+                    <div class="hub-timeline-content">
+                        <span class="hub-timeline-status hub-status-active"><i class="fas fa-spinner fa-pulse"></i> Em execução</span>
+                        <h3>Mutirão de Castração Gratuita</h3>
+                        <p>Programa de castração gratuita em parceria com clínicas veterinárias locais. Já foram realizadas mais de 500 castrações em animais de famílias carentes.</p>
+                        <div class="hub-timeline-progress">
+                            <div class="hub-progress-bar" data-progress="72"></div>
+                            <span>72% da meta atingida</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hub-timeline-item">
+                    <div class="hub-timeline-marker">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="hub-timeline-content">
+                        <span class="hub-timeline-status hub-status-active"><i class="fas fa-spinner fa-pulse"></i> Em execução</span>
+                        <h3>Educação Animal nas Escolas</h3>
+                        <p>Implementação da Lei nº 11.644/2025 com palestras e atividades educativas sobre proteção animal em escolas municipais de Presidente Prudente.</p>
+                        <div class="hub-timeline-progress">
+                            <div class="hub-progress-bar" data-progress="45"></div>
+                            <span>45% das escolas atendidas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hub-timeline-item">
+                    <div class="hub-timeline-marker">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="hub-timeline-content">
+                        <span class="hub-timeline-status hub-status-planned"><i class="fas fa-clock"></i> Planejado</span>
+                        <h3>Centro Municipal de Proteção Animal</h3>
+                        <p>Projeto para criação de um centro de acolhimento temporário para animais resgatados, com atendimento veterinário e programa de adoção responsável.</p>
+                        <div class="hub-timeline-progress">
+                            <div class="hub-progress-bar" data-progress="15"></div>
+                            <span>15% — fase de projeto</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hub-timeline-item">
+                    <div class="hub-timeline-marker">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <div class="hub-timeline-content">
+                        <span class="hub-timeline-status hub-status-planned"><i class="fas fa-clock"></i> Planejado</span>
+                        <h3>Identificação e Microchipagem</h3>
+                        <p>Programa de microchipagem gratuita para animais de famílias de baixa renda, facilitando a identificação e reduzindo o abandono.</p>
+                        <div class="hub-timeline-progress">
+                            <div class="hub-progress-bar" data-progress="8"></div>
+                            <span>8% — análise legislativa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROTETORES & ONGs ===== -->
+    <section class="hub-protectors" id="protetores">
+        <div class="container">
+            <div class="hub-section-header">
+                <span class="hub-label"><i class="fas fa-heart"></i> Rede de Proteção</span>
+                <h2>Protetores & ONGs de Presidente Prudente</h2>
+                <div class="hub-divider"></div>
+                <p class="hub-section-desc">Conheça quem está na linha de frente todos os dias cuidando dos animais</p>
+            </div>
+
+            <div class="hub-protectors-grid">
+                <div class="hub-protector-card">
+                    <div class="hub-protector-icon"><i class="fas fa-paw"></i></div>
+                    <h3>ONG Astae</h3>
+                    <p>Organização dedicada à proteção e bem-estar animal. Atua em resgate, castração e adoção responsável em Presidente Prudente.</p>
+                    <span class="hub-protector-tag">ONG</span>
+                </div>
+                <div class="hub-protector-card">
+                    <div class="hub-protector-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Protetoras Independentes</h3>
+                    <p>Grupo de protetoras que atuam na linha de frente, resgatando, cuidando e buscando lares para animais abandonados.</p>
+                    <span class="hub-protector-tag">Independente</span>
+                </div>
+                <div class="hub-protector-card">
+                    <div class="hub-protector-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3>Rede de Voluntários</h3>
+                    <p>Voluntários da comunidade que auxiliam em feiras de adoção, mutirões de castração e campanhas de conscientização.</p>
+                    <span class="hub-protector-tag">Voluntários</span>
+                </div>
+            </div>
+
+            <div class="hub-protector-cta">
+                <p>É protetor(a) ou representante de ONG? <strong>Entre em contato com o gabinete</strong> para participar das reuniões e ações.</p>
+                <a href="index.html#contato" class="hub-btn-primary"><i class="fas fa-envelope"></i> Fale Conosco</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DISQUE DENÚNCIA — Seção Principal ===== -->
+    <section class="hub-denounce" id="denunciar">
+        <div class="hub-denounce-bg"></div>
+        <div class="container">
+            <div class="hub-denounce-content">
+                <div class="hub-denounce-icon-main">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h2>Denuncie Maus-Tratos<br>Contra Animais</h2>
+                <p>Se você presenciou ou tem conhecimento de maus-tratos contra animais em Presidente Prudente, denuncie! Com a aprovação do PL nº 399/2026, o denunciante pode receber <strong>recompensa financeira</strong>, com <strong>sigilo garantido</strong>.</p>
+
+                <div class="hub-denounce-channels">
+                    <div class="hub-channel">
+                        <div class="hub-channel-icon"><i class="fas fa-phone-alt"></i></div>
+                        <h4>Disque Denúncia</h4>
+                        <a href="tel:181" class="hub-channel-number">181</a>
+                        <span class="hub-channel-desc">Ligação anônima 24h</span>
+                    </div>
+                    <div class="hub-channel">
+                        <div class="hub-channel-icon"><i class="fas fa-building"></i></div>
+                        <h4>Gabinete Bozo</h4>
+                        <a href="tel:+5518999999999" class="hub-channel-number">(18) 99999-9999</a>
+                        <span class="hub-channel-desc">Seg a Sex, 8h-17h</span>
+                    </div>
+                    <div class="hub-channel">
+                        <div class="hub-channel-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h4>Polícia Ambiental</h4>
+                        <a href="tel:190" class="hub-channel-number">190</a>
+                        <span class="hub-channel-desc">Emergências 24h</span>
+                    </div>
+                    <div class="hub-channel">
+                        <div class="hub-channel-icon hub-channel-icon-whatsapp"><i class="fab fa-whatsapp"></i></div>
+                        <h4>WhatsApp</h4>
+                        <a href="https://wa.me/5518999999999?text=Ol%C3%A1%2C%20gostaria%20de%20denunciar%20maus-tratos%20contra%20animais" target="_blank" class="hub-channel-number">(18) 99999-9999</a>
+                        <span class="hub-channel-desc">Envie fotos e localização</span>
+                    </div>
+                </div>
+
+                <div class="hub-denounce-tips">
+                    <h4><i class="fas fa-lightbulb"></i> Como fazer uma denúncia eficaz:</h4>
+                    <div class="hub-tips-grid">
+                        <div class="hub-tip">
+                            <span class="hub-tip-num">1</span>
+                            <p>Anote o endereço completo ou envie a localização GPS</p>
+                        </div>
+                        <div class="hub-tip">
+                            <span class="hub-tip-num">2</span>
+                            <p>Tire fotos ou grave vídeos como evidência (se possível)</p>
+                        </div>
+                        <div class="hub-tip">
+                            <span class="hub-tip-num">3</span>
+                            <p>Descreva a situação com detalhes e horários</p>
+                        </div>
+                        <div class="hub-tip">
+                            <span class="hub-tip-num">4</span>
+                            <p>Informe se há risco iminente ao animal</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://g1.globo.com/sp/presidente-prudente-e-regiao/noticia/2026/02/25/camara-de-presidente-prudente-aprova-recompensa-a-quem-denunciar-maus-tratos-contra-animais-entenda-o-projeto.ghtml" target="_blank" class="hub-btn-denounce-info"><i class="fas fa-info-circle"></i> Entenda o Projeto de Recompensa</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== REDES SOCIAIS ===== -->
+    <section class="hub-social">
+        <div class="container">
+            <div class="hub-section-header">
+                <span class="hub-label"><i class="fas fa-camera"></i> Nas Redes</span>
+                <h2>Acompanhe nas Redes Sociais</h2>
+                <div class="hub-divider"></div>
+            </div>
+            <div class="hub-social-btns">
+                <a href="https://www.instagram.com/bozowellington/" target="_blank" class="hub-social-btn hub-social-insta">
+                    <i class="fab fa-instagram"></i>
+                    <div>
+                        <strong>Instagram</strong>
+                        <span>@bozowellington</span>
+                    </div>
+                </a>
+                <a href="https://www.facebook.com/VereadorWellingtonBozo/" target="_blank" class="hub-social-btn hub-social-fb">
+                    <i class="fab fa-facebook-f"></i>
+                    <div>
+                        <strong>Facebook</strong>
+                        <span>VereadorWellingtonBozo</span>
+                    </div>
+                </a>
+                <a href="#" class="hub-social-btn hub-social-yt">
+                    <i class="fab fa-youtube"></i>
+                    <div>
+                        <strong>YouTube</strong>
+                        <span>Wellington Bozo</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <a href="index.html" class="footer-home-link">Ir para a página inicial</a>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Endereço</h4>
+                    <p>Câmara Municipal de<br>Presidente Prudente<br>Presidente Prudente - SP</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <p><a href="mailto:contato@wellingtonbozo.com.br"><i class="fas fa-envelope"></i> contato@wellingtonbozo.com.br</a></p>
+                    <p><a href="tel:+5518999999999"><i class="fas fa-phone"></i> (18) 99999-9999</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Causa Animal</h4>
+                    <div class="footer-social-links">
+                        <a href="#noticias-animal">Notícias</a>
+                        <a href="#leis-animal">Leis de Proteção</a>
+                        <a href="#projetos-animal">Projetos</a>
+                        <a href="#denunciar">Disque Denúncia</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Nossas redes</h4>
+                    <div class="footer-social-links">
+                        <a href="https://www.instagram.com/bozowellington/" target="_blank">Instagram</a>
+                        <a href="https://www.facebook.com/VereadorWellingtonBozo/" target="_blank">Facebook</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Wellington Bozo — Vereador de Presidente Prudente. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BOTÃO FLUTUANTE DISQUE DENÚNCIA ===== -->
+    <div class="fab-denounce" id="fabDenounce">
+        <button class="fab-btn" id="fabBtn" aria-label="Disque Denúncia">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span class="fab-pulse"></span>
+        </button>
+        <div class="fab-panel" id="fabPanel">
+            <div class="fab-panel-header">
+                <h4><i class="fas fa-shield-alt"></i> Disque Denúncia Animal</h4>
+                <button class="fab-close" id="fabClose" aria-label="Fechar"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="fab-panel-body">
+                <p>Denuncie maus-tratos contra animais. Sigilo garantido.</p>
+                <a href="tel:181" class="fab-channel">
+                    <i class="fas fa-phone-alt"></i>
+                    <div><strong>Disque Denúncia</strong><span>181 — Anônimo 24h</span></div>
+                </a>
+                <a href="tel:190" class="fab-channel">
+                    <i class="fas fa-shield-alt"></i>
+                    <div><strong>Polícia Ambiental</strong><span>190 — Emergências</span></div>
+                </a>
+                <a href="https://wa.me/5518999999999?text=Ol%C3%A1%2C%20gostaria%20de%20denunciar%20maus-tratos%20contra%20animais" target="_blank" class="fab-channel fab-channel-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <div><strong>WhatsApp</strong><span>(18) 99999-9999</span></div>
+                </a>
+                <a href="tel:+5518999999999" class="fab-channel">
+                    <i class="fas fa-building"></i>
+                    <div><strong>Gabinete Bozo</strong><span>(18) 99999-9999</span></div>
+                </a>
+            </div>
+            <a href="#denunciar" class="fab-panel-footer" id="fabGoToSection">
+                <i class="fas fa-arrow-down"></i> Ver seção completa
+            </a>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-top" id="backToTop"><i class="fas fa-chevron-up"></i></a>
+
+    <script src="js/main-v2.js"></script>
+    <script src="js/hub-animal.js"></script>
+</body>
+</html>
