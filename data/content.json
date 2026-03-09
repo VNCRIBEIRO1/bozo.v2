@@ -36,7 +36,7 @@
       "image": "images/hero-denuncia-premiada.png",
       "title": "Câmara aprova Denúncia Premiada proposta por Bozo para proteção animal",
       "description": "Projeto de Lei nº 399/2026 garante recompensa financeira para moradores que denunciarem maus-tratos contra animais em Presidente Prudente, com sigilo total ao denunciante.",
-      "link": "causa-animal.html",
+      "link": "noticia-denuncia-premiada.html",
       "linkText": "Leia mais",
       "active": true
     },
@@ -55,7 +55,7 @@
       "imagePosition": "center 35%",
       "title": "Bozo cobra melhorias em estradas rurais e reforça compromisso com infraestrutura",
       "description": "Vereador encaminha requerimentos solicitando manutenção e pavimentação das estradas rurais da região do km 18, beneficiando produtores e moradores da zona rural.",
-      "link": "#noticias",
+      "link": "noticia-estradas-rurais.html",
       "linkText": "Leia mais",
       "active": true
     },
@@ -73,7 +73,7 @@
       "image": "images/hero-slide-3.jpg",
       "title": "Lei nº 11.644/2025 cria Programa Educacional de Proteção Animal",
       "description": "Programa garante campanhas de castração, adoção responsável e educação sobre proteção animal nas escolas do município de Presidente Prudente.",
-      "link": "causa-animal.html",
+      "link": "noticia-lei-protecao-animal.html",
       "linkText": "Leia mais",
       "active": true
     }
@@ -86,7 +86,7 @@
       "imageAlt": "Denúncia Premiada aprovada na Câmara",
       "title": "Câmara aprova Denúncia Premiada: recompensa a quem denunciar maus-tratos contra animais",
       "description": "Projeto de Lei nº 399/2026 de autoria do vereador Wellington Bozo garante recompensa financeira para moradores que denunciarem maus-tratos contra animais em Presidente Prudente.",
-      "link": "#",
+      "link": "noticia-denuncia-premiada.html",
       "date": "2026-02-25"
     },
     {
@@ -95,7 +95,7 @@
       "imageAlt": "Lei de Proteção Animal",
       "title": "Lei nº 11.644/2025 cria Programa de Proteção Animal em Presidente Prudente",
       "description": "Programa Educacional de Conscientização e Proteção Animal aprovado, garantindo campanhas de castração, adoção responsável e educação sobre proteção animal nas escolas.",
-      "link": "causa-animal.html",
+      "link": "noticia-lei-protecao-animal.html",
       "date": "2025-01-01"
     },
     {
@@ -104,7 +104,7 @@
       "imageAlt": "Infraestrutura rural",
       "title": "Bozo cobra melhorias em estradas rurais da região do km 18",
       "description": "Vereador encaminha requerimentos ao executivo solicitando manutenção e pavimentação das estradas rurais que beneficiam produtores e moradores da zona rural.",
-      "link": "#",
+      "link": "noticia-estradas-rurais.html",
       "date": "2026-01-15"
     }
   ],
@@ -134,7 +134,7 @@
       "date": "25 de fevereiro de 2026",
       "title": "Discurso na aprovação do PL da Denúncia Premiada",
       "description": "Wellington Bozo discursou na sessão que aprovou o PL 399/2026, destacando a importância da proteção animal e o papel dos cidadãos como fiscais contra maus-tratos.",
-      "link": "#"
+      "link": "pronunciamento-denuncia-premiada.html"
     },
     {
       "id": "pronunc-2",
@@ -143,7 +143,7 @@
       "date": "2025",
       "title": "Entrevista sobre a Lei de Proteção Animal nº 11.644",
       "description": "Em entrevista à imprensa local, o vereador explicou os pilares da nova lei que cria o Programa Educacional de Conscientização e Proteção Animal.",
-      "link": "causa-animal.html"
+      "link": "pronunciamento-lei-protecao.html"
     },
     {
       "id": "pronunc-3",
@@ -152,7 +152,7 @@
       "date": "Janeiro de 2025",
       "title": "Posse como Vice-Presidente da Câmara Municipal",
       "description": "Reeleito com 1.833 votos, Wellington Bozo tomou posse na Mesa Diretora como Vice-Presidente da Câmara para a 19ª Legislatura (2025-2028).",
-      "link": "#"
+      "link": "pronunciamento-posse.html"
     }
   ],
 
@@ -289,7 +289,7 @@
         "title": "Lei nº 11.644/2025",
         "description": "Programa Educacional de Conscientização e Proteção Animal no município de Presidente Prudente.",
         "details": ["Campanhas de castração", "Adoção responsável", "Educação nas escolas"],
-        "link": "#",
+        "link": "noticia-lei-protecao-animal.html",
         "featured": false
       },
       {
